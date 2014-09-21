@@ -1,0 +1,14 @@
+//
+//  SmileHands2014-Prefix.pch
+//  SmileHands2014
+//
+//  Created by suwan on 2014. 9. 21..
+//  Copyright (c) 2014년 smilehands. All rights reserved.
+//
+
+#ifndef SmileHands2014_SmileHands2014_Prefix_pch
+#define SmileHands2014_SmileHands2014_Prefix_pch
+
+#import "SmileHandsConstants.h"
+
+#endif
