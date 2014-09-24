@@ -1,18 +1,18 @@
 //
-//  SHBeaconFinderViewController.m
+//  SHSettingsMemberViewController.m
 //  SmileHands2014
 //
-//  Created by suwan on 2014. 9. 23..
+//  Created by suwan on 2014. 9. 25..
 //  Copyright (c) 2014년 smilehands. All rights reserved.
 //
 
-#import "SHBeaconFinderViewController.h"
+#import "SHSettingsMemberViewController.h"
 
-@interface SHBeaconFinderViewController ()
+@interface SHSettingsMemberViewController ()
 
 @end
 
-@implementation SHBeaconFinderViewController
+@implementation SHSettingsMemberViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,13 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    self.title = LocalString(@"title_beacon");
 }
 
 /*

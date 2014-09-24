@@ -16,6 +16,7 @@
 #import "SHSearchViewController.h"
 #import "SHSettingsViewController.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -63,48 +64,13 @@
     
     SHTabBarController *tabBarController = [[SHTabBarController alloc] init];
     
-    [tabBarController setViewControllers:@[
-                                           [self etiquetteNavigationViewController],
-                                           [self favoriteNavigationViewController],
-                                           [self monitorNavigationViewController],
-                                           [self settingsNavigationViewController]
-                                           ]];
+    [tabBarController setViewControllers:[SHTabBarController defaultTabViewControllers]];
     
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
 }
 
-- (UINavigationController *)etiquetteNavigationViewController
-{
-    SHEtiquetteRootViewController *vc = [[SHEtiquetteRootViewController alloc] initWithNibName:@"SHEtiquetteRootViewController"
-                                                                                        bundle:nil];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    return nc;
-}
 
-- (UINavigationController *)favoriteNavigationViewController
-{
-    SHFavoriteViewController *vc = [[SHFavoriteViewController alloc] initWithNibName:@"SHFavoriteViewController"
-                                                                                        bundle:nil];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    return nc;
-}
 
-- (UINavigationController *)monitorNavigationViewController
-{
-    SHBeaconFinderViewController *vc = [[SHBeaconFinderViewController alloc] initWithNibName:@"SHBeaconFinderViewController"
-                                                                                        bundle:nil];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    return nc;
-}
-
-- (UINavigationController *)settingsNavigationViewController
-{
-    SHSettingsViewController *vc = [[SHSettingsViewController alloc] initWithNibName:@"SHSettingsViewController"
-                                                                                        bundle:nil];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    return nc;
-}
 
 @end

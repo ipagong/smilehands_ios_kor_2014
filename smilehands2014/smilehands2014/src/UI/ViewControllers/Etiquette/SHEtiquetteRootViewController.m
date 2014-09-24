@@ -24,14 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)title
+- (void)viewWillAppear:(BOOL)animated
 {
-    return LocalString(@"etiquette_title");
+    [super viewWillAppear:animated];
+    
+    self.title = LocalString(@"title_etiquette");
 }
 
 - (UITabBarItem *)tabBarItem
 {
-    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:self.title
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:nil
                                                        image:[UIImage imageNamed:@"favorite"]
                                                selectedImage:[UIImage imageNamed:@""]];
     return item;

@@ -22,4 +22,48 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)beginCustomizingItems:(NSArray *)items
+{
+    for (id item in items) {
+        DLog(@"---> item : %@", item);
+    }
+}
+- (BOOL)endCustomizingAnimated:(BOOL)animated
+{
+    return NO;
+}
+
+
++ (NSArray *)defaultTabViewControllers
+{
+    NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
+    
+    for (NSString *clazz in [self tabClazzList]) {
+        @try {
+            Class viewControllerClazz = NSClassFromString(clazz);
+            UIViewController *vc = [[viewControllerClazz alloc] initWithNibName:clazz
+                                                                         bundle:nil];
+            UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+            
+            [viewControllers addObject:nc];
+        }
+        @catch (NSException *exception) {
+            DLog(@"-------> you must match fetcher clazz name.(2)");
+            return nil;
+        }
+    }
+    
+    return viewControllers;
+}
+
++ (NSArray *)tabClazzList
+{
+    return @[
+             @"SHEtiquetteRootViewController",
+             @"SHFavoriteViewController",
+             @"SHBeaconFinderViewController",
+             @"SHSettingsViewController",
+             ];
+}
+
 @end

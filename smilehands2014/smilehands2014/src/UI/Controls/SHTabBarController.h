@@ -10,4 +10,7 @@
 
 @interface SHTabBarController : UITabBarController
 
++ (NSArray *)defaultTabViewControllers;
++ (NSArray *)tabClazzList;
+
 @end

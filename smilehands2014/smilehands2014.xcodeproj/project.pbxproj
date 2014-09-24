@@ -82,6 +82,23 @@
 		18C8C16C19D32030009C5186 /* SHCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C16B19D32030009C5186 /* SHCommonViewController.m */; };
 		18C8C17119D3289D009C5186 /* AppUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C16E19D3289D009C5186 /* AppUtility.m */; };
 		18C8C17219D3289D009C5186 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17019D3289D009C5186 /* UIColor+Addition.m */; };
+		18C8C17519D3364D009C5186 /* SHEtiquetteTopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17419D3364D009C5186 /* SHEtiquetteTopViewCell.m */; };
+		18C8C17819D336BC009C5186 /* SHEtiquetteInfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17719D336BC009C5186 /* SHEtiquetteInfoViewCell.m */; };
+		18C8C17B19D336E4009C5186 /* SHBeaconUserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17A19D336E4009C5186 /* SHBeaconUserViewCell.m */; };
+		18C8C17E19D336F9009C5186 /* SHTeamMemberViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17D19D336F9009C5186 /* SHTeamMemberViewCell.m */; };
+		18C8C18119D3378C009C5186 /* SHSettingsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C18019D3378C009C5186 /* SHSettingsViewCell.m */; };
+		18C8C19319D346F6009C5186 /* Etiquette.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C19219D346F6009C5186 /* Etiquette.m */; };
+		18C8C19619D346F6009C5186 /* KindHandicap.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C19519D346F6009C5186 /* KindHandicap.m */; };
+		18C8C19919D346F6009C5186 /* BeaconUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C19819D346F6009C5186 /* BeaconUser.m */; };
+		18C8C19D19D34A05009C5186 /* SHEtiquetteInfoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C19B19D34A05009C5186 /* SHEtiquetteInfoListViewController.m */; };
+		18C8C19E19D34A05009C5186 /* SHEtiquetteInfoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8C19C19D34A05009C5186 /* SHEtiquetteInfoListViewController.xib */; };
+		18C8C1A519D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1A319D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m */; };
+		18C8C1A619D34A26009C5186 /* SHEtiquetteInfoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8C1A419D34A26009C5186 /* SHEtiquetteInfoDetailViewController.xib */; };
+		18C8C1AD19D34A74009C5186 /* SHSettingsVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1AB19D34A74009C5186 /* SHSettingsVersionViewController.m */; };
+		18C8C1AE19D34A74009C5186 /* SHSettingsVersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8C1AC19D34A74009C5186 /* SHSettingsVersionViewController.xib */; };
+		18C8C1B219D34A85009C5186 /* SHSettingsMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1B019D34A85009C5186 /* SHSettingsMemberViewController.m */; };
+		18C8C1B319D34A85009C5186 /* SHSettingsMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8C1B119D34A85009C5186 /* SHSettingsMemberViewController.xib */; };
+		18C8C1B619D34DFD009C5186 /* SHLocalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1B519D34DFD009C5186 /* SHLocalDataManager.m */; };
 		49DC0D616B714E5FA716CD6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB165FEEF4484A2C91A7654A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +221,36 @@
 		18C8C16E19D3289D009C5186 /* AppUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtility.m; sourceTree = "<group>"; };
 		18C8C16F19D3289D009C5186 /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
 		18C8C17019D3289D009C5186 /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		18C8C17319D3364D009C5186 /* SHEtiquetteTopViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEtiquetteTopViewCell.h; sourceTree = "<group>"; };
+		18C8C17419D3364D009C5186 /* SHEtiquetteTopViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEtiquetteTopViewCell.m; sourceTree = "<group>"; };
+		18C8C17619D336BC009C5186 /* SHEtiquetteInfoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEtiquetteInfoViewCell.h; sourceTree = "<group>"; };
+		18C8C17719D336BC009C5186 /* SHEtiquetteInfoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEtiquetteInfoViewCell.m; sourceTree = "<group>"; };
+		18C8C17919D336E4009C5186 /* SHBeaconUserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBeaconUserViewCell.h; sourceTree = "<group>"; };
+		18C8C17A19D336E4009C5186 /* SHBeaconUserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBeaconUserViewCell.m; sourceTree = "<group>"; };
+		18C8C17C19D336F9009C5186 /* SHTeamMemberViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTeamMemberViewCell.h; sourceTree = "<group>"; };
+		18C8C17D19D336F9009C5186 /* SHTeamMemberViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTeamMemberViewCell.m; sourceTree = "<group>"; };
+		18C8C17F19D3378C009C5186 /* SHSettingsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingsViewCell.h; sourceTree = "<group>"; };
+		18C8C18019D3378C009C5186 /* SHSettingsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingsViewCell.m; sourceTree = "<group>"; };
+		18C8C19119D346F6009C5186 /* Etiquette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Etiquette.h; sourceTree = "<group>"; };
+		18C8C19219D346F6009C5186 /* Etiquette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Etiquette.m; sourceTree = "<group>"; };
+		18C8C19419D346F6009C5186 /* KindHandicap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindHandicap.h; sourceTree = "<group>"; };
+		18C8C19519D346F6009C5186 /* KindHandicap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindHandicap.m; sourceTree = "<group>"; };
+		18C8C19719D346F6009C5186 /* BeaconUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconUser.h; sourceTree = "<group>"; };
+		18C8C19819D346F6009C5186 /* BeaconUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconUser.m; sourceTree = "<group>"; };
+		18C8C19A19D34A05009C5186 /* SHEtiquetteInfoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEtiquetteInfoListViewController.h; sourceTree = "<group>"; };
+		18C8C19B19D34A05009C5186 /* SHEtiquetteInfoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEtiquetteInfoListViewController.m; sourceTree = "<group>"; };
+		18C8C19C19D34A05009C5186 /* SHEtiquetteInfoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHEtiquetteInfoListViewController.xib; sourceTree = "<group>"; };
+		18C8C1A219D34A26009C5186 /* SHEtiquetteInfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEtiquetteInfoDetailViewController.h; sourceTree = "<group>"; };
+		18C8C1A319D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEtiquetteInfoDetailViewController.m; sourceTree = "<group>"; };
+		18C8C1A419D34A26009C5186 /* SHEtiquetteInfoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHEtiquetteInfoDetailViewController.xib; sourceTree = "<group>"; };
+		18C8C1AA19D34A74009C5186 /* SHSettingsVersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingsVersionViewController.h; sourceTree = "<group>"; };
+		18C8C1AB19D34A74009C5186 /* SHSettingsVersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingsVersionViewController.m; sourceTree = "<group>"; };
+		18C8C1AC19D34A74009C5186 /* SHSettingsVersionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingsVersionViewController.xib; sourceTree = "<group>"; };
+		18C8C1AF19D34A85009C5186 /* SHSettingsMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingsMemberViewController.h; sourceTree = "<group>"; };
+		18C8C1B019D34A85009C5186 /* SHSettingsMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingsMemberViewController.m; sourceTree = "<group>"; };
+		18C8C1B119D34A85009C5186 /* SHSettingsMemberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingsMemberViewController.xib; sourceTree = "<group>"; };
+		18C8C1B419D34DFD009C5186 /* SHLocalDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLocalDataManager.h; sourceTree = "<group>"; };
+		18C8C1B519D34DFD009C5186 /* SHLocalDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLocalDataManager.m; sourceTree = "<group>"; };
 		6C386D2FB5E04355898CA0CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CB165FEEF4484A2C91A7654A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -234,6 +281,12 @@
 				1806B44519D0959C000C8507 /* SHEtiquetteRootViewController.h */,
 				1806B44619D0959C000C8507 /* SHEtiquetteRootViewController.m */,
 				1806B44719D0959C000C8507 /* SHEtiquetteRootViewController.xib */,
+				18C8C19A19D34A05009C5186 /* SHEtiquetteInfoListViewController.h */,
+				18C8C19B19D34A05009C5186 /* SHEtiquetteInfoListViewController.m */,
+				18C8C19C19D34A05009C5186 /* SHEtiquetteInfoListViewController.xib */,
+				18C8C1A219D34A26009C5186 /* SHEtiquetteInfoDetailViewController.h */,
+				18C8C1A319D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m */,
+				18C8C1A419D34A26009C5186 /* SHEtiquetteInfoDetailViewController.xib */,
 			);
 			path = Etiquette;
 			sourceTree = "<group>";
@@ -274,6 +327,12 @@
 				1806B44F19D0962A000C8507 /* SHSettingsViewController.h */,
 				1806B45019D0962A000C8507 /* SHSettingsViewController.m */,
 				1806B45119D0962A000C8507 /* SHSettingsViewController.xib */,
+				18C8C1AA19D34A74009C5186 /* SHSettingsVersionViewController.h */,
+				18C8C1AB19D34A74009C5186 /* SHSettingsVersionViewController.m */,
+				18C8C1AC19D34A74009C5186 /* SHSettingsVersionViewController.xib */,
+				18C8C1AF19D34A85009C5186 /* SHSettingsMemberViewController.h */,
+				18C8C1B019D34A85009C5186 /* SHSettingsMemberViewController.m */,
+				18C8C1B119D34A85009C5186 /* SHSettingsMemberViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -386,6 +445,8 @@
 				18B5263419CEF81A0040698F /* SHBeaconManager.m */,
 				18C8C16419D31D84009C5186 /* SHServiceManager.h */,
 				18C8C16519D31D84009C5186 /* SHServiceManager.m */,
+				18C8C1B419D34DFD009C5186 /* SHLocalDataManager.h */,
+				18C8C1B519D34DFD009C5186 /* SHLocalDataManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -414,6 +475,16 @@
 			isa = PBXGroup;
 			children = (
 				1806B45719D0A01E000C8507 /* SHCommonCellProtocol.h */,
+				18C8C17319D3364D009C5186 /* SHEtiquetteTopViewCell.h */,
+				18C8C17419D3364D009C5186 /* SHEtiquetteTopViewCell.m */,
+				18C8C17619D336BC009C5186 /* SHEtiquetteInfoViewCell.h */,
+				18C8C17719D336BC009C5186 /* SHEtiquetteInfoViewCell.m */,
+				18C8C17919D336E4009C5186 /* SHBeaconUserViewCell.h */,
+				18C8C17A19D336E4009C5186 /* SHBeaconUserViewCell.m */,
+				18C8C17C19D336F9009C5186 /* SHTeamMemberViewCell.h */,
+				18C8C17D19D336F9009C5186 /* SHTeamMemberViewCell.m */,
+				18C8C17F19D3378C009C5186 /* SHSettingsViewCell.h */,
+				18C8C18019D3378C009C5186 /* SHSettingsViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -569,6 +640,12 @@
 			isa = PBXGroup;
 			children = (
 				18B525F019CEC77B0040698F /* SmileHands2014.xcdatamodeld */,
+				18C8C19719D346F6009C5186 /* BeaconUser.h */,
+				18C8C19819D346F6009C5186 /* BeaconUser.m */,
+				18C8C19419D346F6009C5186 /* KindHandicap.h */,
+				18C8C19519D346F6009C5186 /* KindHandicap.m */,
+				18C8C19119D346F6009C5186 /* Etiquette.h */,
+				18C8C19219D346F6009C5186 /* Etiquette.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -696,10 +773,12 @@
 				18C8C14B19D3149F009C5186 /* facebook_unsel.png in Resources */,
 				18C8C13019D3149F009C5186 /* bg_main_02@2x.png in Resources */,
 				18C8C13D19D3149F009C5186 /* btn_tab_near_nor@2x.png in Resources */,
+				18C8C1B319D34A85009C5186 /* SHSettingsMemberViewController.xib in Resources */,
 				18C8C14A19D3149F009C5186 /* facebook_sel.png in Resources */,
 				18C8C13E19D3149F009C5186 /* btn_tab_near_sel@2x.png in Resources */,
 				1806B43C19D094B7000C8507 /* SHFavoriteViewController.xib in Resources */,
 				18C8C13519D3149F009C5186 /* btn_main_nor@2x.png in Resources */,
+				18C8C19E19D34A05009C5186 /* SHEtiquetteInfoListViewController.xib in Resources */,
 				18C8C13419D3149F009C5186 /* btn_cancel@2x.png in Resources */,
 				18C8C14919D3149F009C5186 /* developer05.png in Resources */,
 				18C8C14819D3149F009C5186 /* developer04.png in Resources */,
@@ -710,6 +789,7 @@
 				18C8C15319D3149F009C5186 /* photo.png in Resources */,
 				18C8C15919D3149F009C5186 /* tab_bar@2x.png in Resources */,
 				18C8C14F19D3149F009C5186 /* icon_alarm.png in Resources */,
+				18C8C1AE19D34A74009C5186 /* SHSettingsVersionViewController.xib in Resources */,
 				18C8C12F19D3149F009C5186 /* bg_main_01@2x.png in Resources */,
 				1806B44919D0959C000C8507 /* SHEtiquetteRootViewController.xib in Resources */,
 				18C8C15719D3149F009C5186 /* smilehands.png in Resources */,
@@ -722,6 +802,7 @@
 				18C8C15119D3149F009C5186 /* leader.png in Resources */,
 				18C8C13319D3149F009C5186 /* btn_back@2x.png in Resources */,
 				18C8C13B19D3149F009C5186 /* btn_tab_home_nor@2x.png in Resources */,
+				18C8C1A619D34A26009C5186 /* SHEtiquetteInfoDetailViewController.xib in Resources */,
 				18C8C13A19D3149F009C5186 /* btn_tab_favorite_sel@2x.png in Resources */,
 				18C8C13819D3149F009C5186 /* btn_search@2x.png in Resources */,
 				18C8C15619D3149F009C5186 /* slash@2x.png in Resources */,
@@ -779,24 +860,37 @@
 				18B525EF19CEC77B0040698F /* AppDelegate.m in Sources */,
 				18B5263519CEF81A0040698F /* SHBeaconManager.m in Sources */,
 				1806B45219D0962A000C8507 /* SHSettingsViewController.m in Sources */,
+				18C8C17819D336BC009C5186 /* SHEtiquetteInfoViewCell.m in Sources */,
 				1806B43619D09433000C8507 /* SHBeaconFinderViewController.m in Sources */,
+				18C8C1B219D34A85009C5186 /* SHSettingsMemberViewController.m in Sources */,
 				1806B41B19D092B1000C8507 /* SHTabBarController.m in Sources */,
 				18B525EC19CEC77B0040698F /* main.m in Sources */,
+				18C8C1AD19D34A74009C5186 /* SHSettingsVersionViewController.m in Sources */,
+				18C8C17519D3364D009C5186 /* SHEtiquetteTopViewCell.m in Sources */,
 				18C8C17219D3289D009C5186 /* UIColor+Addition.m in Sources */,
+				18C8C17E19D336F9009C5186 /* SHTeamMemberViewCell.m in Sources */,
 				18C8C16619D31D84009C5186 /* SHServiceManager.m in Sources */,
 				1806B41819D08AD8000C8507 /* SHApplicationCoreDataHelper.m in Sources */,
 				18C8C16919D31DA2009C5186 /* SHApplicationEventHelper.m in Sources */,
 				1806B44819D0959C000C8507 /* SHEtiquetteRootViewController.m in Sources */,
 				18C8C16319D31770009C5186 /* SHDataList.m in Sources */,
+				18C8C19319D346F6009C5186 /* Etiquette.m in Sources */,
+				18C8C17B19D336E4009C5186 /* SHBeaconUserViewCell.m in Sources */,
 				18B525F519CEC77B0040698F /* ViewController.m in Sources */,
 				18C8C17119D3289D009C5186 /* AppUtility.m in Sources */,
+				18C8C1A519D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m in Sources */,
+				18C8C19619D346F6009C5186 /* KindHandicap.m in Sources */,
 				18B525F219CEC77B0040698F /* SmileHands2014.xcdatamodeld in Sources */,
 				18B5263819CFACBE0040698F /* SmileHTTPClient.m in Sources */,
+				18C8C19D19D34A05009C5186 /* SHEtiquetteInfoListViewController.m in Sources */,
+				18C8C18119D3378C009C5186 /* SHSettingsViewCell.m in Sources */,
 				18C8C15D19D31681009C5186 /* SHFetcherFactory.m in Sources */,
 				1806B43B19D094B7000C8507 /* SHFavoriteViewController.m in Sources */,
 				18C8C16019D316D6009C5186 /* SHDefaultFetcher.m in Sources */,
+				18C8C1B619D34DFD009C5186 /* SHLocalDataManager.m in Sources */,
 				18C8C16C19D32030009C5186 /* SHCommonViewController.m in Sources */,
 				1806B44D19D095D2000C8507 /* SHSearchViewController.m in Sources */,
+				18C8C19919D346F6009C5186 /* BeaconUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

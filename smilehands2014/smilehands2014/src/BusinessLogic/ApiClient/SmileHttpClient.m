@@ -13,7 +13,7 @@
 
 @implementation SmileHTTPClient
 
-+ (instancetype)sharedApiClient
++ (instancetype)apiClient;
 {
     static SmileHTTPClient * apiClient = nil;
     static dispatch_once_t onceToken;

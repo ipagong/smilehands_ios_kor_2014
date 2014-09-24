@@ -24,9 +24,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)title
+- (void)viewWillAppear:(BOOL)animated
 {
-    return LocalString(@"settings_title");
+    [super viewWillAppear:animated];
+    
+    self.title = LocalString(@"title_settings");
 }
 
 /*

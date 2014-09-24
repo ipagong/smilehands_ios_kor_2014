@@ -11,7 +11,7 @@
 
 @interface SmileHTTPClient : AFHTTPSessionManager
 
-+ (instancetype)sharedApiClient;
++ (instancetype)apiClient;
 
 - (NSURLSessionDataTask *)postPath:(NSString *)path
                         parameters:(NSDictionary *)parameters
