@@ -6,4 +6,31 @@
   Copyright (c) 2014년 smilehands. All rights reserved.
 */
 
+title_etiquette = "장애 유형별 에티켓";
+title_favorite  = "즐겨찾기";
+title_creators  = "만든사람들";
+title_version   = "버전정보";
+title_etiquette = "상세에티켓";
+title_beacon    = "주변탐색";
+title_settings  = "환경설정";
+
+title_etiquette_specific = "%@ 에티켓";
+
+settings_alarm_title    = "알림설정";
+settings_alarm_subtitle = "장애인발견시자동알림";
+settings_about          = "어바웃";
+settings_teamname       = "꽃연두";
+
+settings_teams_pm       = "팀장";
+settings_teams_idea     = "제안";
+settings_teams_ux       = "기획";
+settings_teams_ft       = "마크업";
+settings_teams_dev      = "개발";
+settings_teams_design   = "디자인";
+
+label_search          = "검색";
+label_search_info     = "장애 유형별, 상황별 에티켓을 검색해보세요.";
+label_cancel          = "취소";
+label_cancel          = "취소";
+
 
