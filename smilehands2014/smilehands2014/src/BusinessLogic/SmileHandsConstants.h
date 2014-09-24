@@ -25,3 +25,5 @@
 #define NSLog( s, ... )
 #define DLog( s, ... )
 #endif
+
+#define LocalString(x) NSLocalizedStringFromTable(x, @"SmileHandsLocal", @"")

@@ -10,5 +10,11 @@
 #define SmileHands2014_SmileHands2014_Prefix_pch
 
 #import "SmileHandsConstants.h"
+#import "CoreData+MagicalRecord.h"
+#import "SHCommonCellProtocol.h"
+#import "SHCommonModelProtocol.h"
+
+#import "AppUtility.h"
+#import "UIColor+Addition.h"
 
 #endif

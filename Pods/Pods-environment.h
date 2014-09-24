@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 4
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// DSXActivityIndicator
+#define COCOAPODS_POD_AVAILABLE_DSXActivityIndicator
+#define COCOAPODS_VERSION_MAJOR_DSXActivityIndicator 0
+#define COCOAPODS_VERSION_MINOR_DSXActivityIndicator 0
+#define COCOAPODS_VERSION_PATCH_DSXActivityIndicator 1
+
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2

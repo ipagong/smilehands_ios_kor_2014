@@ -7,7 +7,20 @@
 //
 
 #import "AFHTTPSessionManager.h"
+#import "AFHTTPRequestOperation.h"
 
-@interface SmileHttpClient : AFHTTPSessionManager
+@interface SmileHTTPClient : AFHTTPSessionManager
+
++ (instancetype)sharedApiClient;
+
+- (NSURLSessionDataTask *)postPath:(NSString *)path
+                        parameters:(NSDictionary *)parameters
+                        completion:(void (^)(id result))completion
+                           failure:(void (^)(id error, BOOL isCancelled))failure;
+
+- (NSURLSessionDataTask *)getPath:(NSString *)path
+                       parameters:(NSDictionary *)parameters
+                       completion:(void (^)(id result))completion
+                          failure:(void (^)(id error, BOOL isCancelled))failure;
 
 @end

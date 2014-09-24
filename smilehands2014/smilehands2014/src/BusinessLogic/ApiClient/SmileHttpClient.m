@@ -6,8 +6,81 @@
 //  Copyright (c) 2014년 smilehands. All rights reserved.
 //
 
-#import "SmileHttpClient.h"
+#import "SmileHTTPClient.h"
 
-@implementation SmileHttpClient
+#define SMILE_HANDS_HTTP_METHOD_POST @"POST"
+#define SMILE_HANDS_HTTP_METHOD_GET  @"GET"
+
+@implementation SmileHTTPClient
+
++ (instancetype)sharedApiClient
+{
+    static SmileHTTPClient * apiClient = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        apiClient = [[SmileHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:SMILE_HANDS_BASE_URL_STRING]];
+        apiClient.responseSerializer = [AFJSONResponseSerializer serializer];
+        apiClient.requestSerializer  = [AFJSONRequestSerializer serializer];
+    });
+    
+    return apiClient;
+}
+
+#pragma mark -
+#pragma mark Result Parse
+
+- (NSURLSessionDataTask *)postPath:(NSString *)path
+                        parameters:(NSDictionary *)parameters
+                        completion:(void (^)(id result))completion
+                           failure:(void (^)(id error, BOOL isCancelled))failure
+{
+    return [self POST:path parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+
+        if (responseObject == nil) {
+             if (failure) failure(nil, NO);
+        }
+        
+        if (completion) completion(responseObject);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        [self removeCookieData];
+        
+        if (failure) failure(error, task.state == NSURLSessionTaskStateCanceling);
+        
+    }];
+}
+
+
+- (NSURLSessionDataTask *)getPath:(NSString *)path
+                       parameters:(NSDictionary *)parameters
+                       completion:(void (^)(id result))completion
+                          failure:(void (^)(id error, BOOL isCancelled))failure
+{
+    return [self GET:path parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        if (responseObject == nil) {
+            if (failure) failure(nil, NO);
+        }
+        
+        if (completion) completion(responseObject);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        [self removeCookieData];
+        
+        if (failure) failure(error, task.state == NSURLSessionTaskStateCanceling);
+        
+    }];
+}
+
+- (void)removeCookieData
+{
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in [storage cookies]) {
+        [storage deleteCookie:cookie];
+    }
+}
 
 @end
