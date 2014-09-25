@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 4
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// CRNavigationController
+#define COCOAPODS_POD_AVAILABLE_CRNavigationController
+#define COCOAPODS_VERSION_MAJOR_CRNavigationController 1
+#define COCOAPODS_VERSION_MINOR_CRNavigationController 1
+#define COCOAPODS_VERSION_PATCH_CRNavigationController 0
+
 // DSXActivityIndicator
 #define COCOAPODS_POD_AVAILABLE_DSXActivityIndicator
 #define COCOAPODS_VERSION_MAJOR_DSXActivityIndicator 0

@@ -9,11 +9,11 @@
 //API
 #ifdef DEBUG
 
-#define SMILE_HANDS_BASE_URL_STRING     @"http://www.smilehands.co.kr"
+#define SMILE_HANDS_BASE_URL_STRING     @"http://sicamp201402.cafe24.com/"
 
 #else
 
-#define SMILE_HANDS_BASE_URL_STRING     @"http://www.smilehands.co.kr"
+#define SMILE_HANDS_BASE_URL_STRING     @"http://sicamp201402.cafe24.com/"
 
 #endif
 
@@ -27,3 +27,6 @@
 #endif
 
 #define LocalString(x) NSLocalizedStringFromTable(x, @"SmileHandsLocal", @"")
+
+#define RGBColor(r,g,b) [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0f]
+#define RGBAColor(r,g,b,a) [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:a]

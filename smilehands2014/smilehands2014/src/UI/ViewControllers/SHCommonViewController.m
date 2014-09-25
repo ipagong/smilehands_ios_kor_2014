@@ -12,9 +12,68 @@
 
 #pragma mark - setup methods
 
-- (void)initData
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self initCustomData];
+}
+
+- (void)initCustomData
 {
     self.dataList = [[SHDataList alloc] init];
+    
+    self.fetcher = [SHFetcherFactory createFetcherWithType:self.fetcherType delegate:self];
+    self.fetcher.dataList = self.dataList;
+    self.fetcher.parameter = self.fetcherParameter;
+}
+
+- (void)initCustomUI
+{
+    
+}
+
+- (SHFetcherType)fetcherType
+{
+    DLog(@"-----> should override...");
+    return SHFetcherTypeTopHandicap;
+}
+
+- (id)fetcherParameter
+{
+    return nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self initCustomUI];
+    
+    if (self.fetcher) {
+        [self.fetcher requestData];
+    }
+}
+
+#pragma mark - fetcher delegate
+
+- (void)smileHandsFetcher:(id<SHFetcherProtocol>)fetcher finishedResultType:(SHFetcherResultType)resultType error:(NSError *)error
+{
+    switch (resultType) {
+        case SHFetcherResultTypeSuccess:
+        {
+            [self.currentCollectionView reloadData];
+        }
+            break;
+            
+        case SHFetcherResultTypeNoData:
+        {
+            [self.currentCollectionView reloadData];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - layout methods

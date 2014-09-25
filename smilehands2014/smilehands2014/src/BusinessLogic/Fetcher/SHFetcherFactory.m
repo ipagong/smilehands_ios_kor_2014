@@ -23,10 +23,11 @@ static NSDictionary *gFetcherDictionary;
 {
     if (gFetcherDictionary == nil) {
         gFetcherDictionary = @{
-                               @(SHFetcherTypeEtiquette)   : @"CloudDataMovieFileFetcher",
-                               @(SHFetcherTypeFavorite)    : @"CloudDataMovieFolderFetcher",
-                               @(SHFetcherTypeFinder)      : @"CloudDataMainFolderFetcher",
-                               @(SHFetcherTypeSearch)      : @"CloudDataDocFileFetcher"
+                               @(SHFetcherTypeTopHandicap) : @"SHTopHandicapFetcher",
+                               @(SHFetcherTypeEtiquette)   : @"SHEtiquteListFetcher",
+                               @(SHFetcherTypeFavorite)    : @"SHFavoriteFetcher",
+                               @(SHFetcherTypeSearch)      : @"SHSearchFetcher",
+                               @(SHFetcherTypeMember)      : @"SHMemberFetcher"
                                };
     }
 }

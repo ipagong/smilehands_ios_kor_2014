@@ -9,21 +9,41 @@
 #import "SHServiceManager.h"
 #import "SmileHTTPClient.h"
 
+#define KServiceParameterPublish @"P"
+
 @implementation SHServiceManager
+
 
 + (void)etiquetteListWithMajorId:(NSString *)majorId
                       completion:(void (^)(id result))completion
                          failure:(void (^)(id error, BOOL isCancelled))failure
 {
-    NSDictionary *parameter = @{@"majorId":majorId};
+    NSDictionary *parameter = @{@"majorId": majorId,
+                                @"status" : KServiceParameterPublish};
     
     [[SmileHTTPClient apiClient] postPath:@"/etiquette/list.do"
                                parameters:parameter
                                completion:^(id result) {
                                    
-                               } failure:^(id error, BOOL isCancelled) {
+                                   if ([result isKindOfClass:[NSDictionary class]] == NO) {
+                                       if (failure) failure(nil, NO);
+                                       return;
+                                   }
                                    
-                               }];
+                                   NSDictionary *contents = result;
+                                   
+                                   NSArray *list = contents[@"list"];
+                                   
+                                   NSMutableArray *resultList = [[NSMutableArray alloc] initWithCapacity:list.count];
+                                   
+                                   [list enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                                       [resultList addObject:[[SHEtiquetteResponseModel alloc] initWithDictionary:obj]];
+                                   }];
+                                   
+                                   if (completion)
+                                       completion(resultList);
+                                   
+                               } failure:failure];
 }
 
 
@@ -37,9 +57,7 @@
                                parameters:parameter
                                completion:^(id result) {
                                    
-                               } failure:^(id error, BOOL isCancelled) {
-                                   
-                               }];
+                               } failure:failure];
 }
 
 + (void)findLostInfoWithMacAddr:(NSArray *)macAddrList

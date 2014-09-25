@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, SHFetcherResultType) {
 
 @protocol SHFetcherDelegate <NSObject>
 
-- (void)SmileHandsFetcher:(id<SHFetcherProtocol>)fetcher
+- (void)smileHandsFetcher:(id<SHFetcherProtocol>)fetcher
        finishedResultType:(SHFetcherResultType)resultType
                     error:(NSError *)error;
 
@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, SHFetcherResultType) {
 
 @end
 
-@interface SHDefaultFetcher : NSObject
+@interface SHDefaultFetcher : NSObject <SHFetcherProtocol>
 
 @property (nonatomic, strong) id parameter;
 
@@ -49,5 +49,7 @@ typedef NS_ENUM(NSInteger, SHFetcherResultType) {
 
 @property (nonatomic, weak) SHDataList *dataList;
 @property (nonatomic, weak) id<SHFetcherDelegate> delegate;
+
+- (void)sendFetcherResultType:(SHFetcherResultType)type error:(NSError *)error;
 
 @end

@@ -17,4 +17,14 @@
 #import "AppUtility.h"
 #import "UIColor+Addition.h"
 
+#import "SHLocalDataManager.h"
+#import "SHBeaconManager.h"
+#import "SHServiceManager.h"
+
+#import "BeaconUser.h"
+#import "KindHandicap.h"
+#import "Etiquette.h"
+
+#import "SHEtiquetteResponseModel.h"
+
 #endif

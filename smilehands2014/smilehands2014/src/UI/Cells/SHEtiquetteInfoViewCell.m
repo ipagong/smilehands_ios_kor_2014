@@ -10,4 +10,16 @@
 
 @implementation SHEtiquetteInfoViewCell
 
+- (void)refreshWithModel:(id<SHCommonModelProtocol>)model
+{
+    if ([model isKindOfClass:[Etiquette class]] == NO) {
+        return;
+    }
+    
+    self.model = model;
+    
+    
+    
+}
+
 @end

@@ -25,4 +25,11 @@
     DLog(@"--> should override.");
 }
 
+- (void)sendFetcherResultType:(SHFetcherResultType)type error:(NSError *)error
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(smileHandsFetcher:finishedResultType:error:)] == YES) {
+        [self.delegate smileHandsFetcher:self finishedResultType:type error:error];
+    }
+}
+
 @end

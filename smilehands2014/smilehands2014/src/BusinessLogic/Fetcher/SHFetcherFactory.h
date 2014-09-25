@@ -10,10 +10,11 @@
 #import "SHDefaultFetcher.h"
 
 typedef NS_ENUM(NSInteger, SHFetcherType) {
-    SHFetcherTypeEtiquette = 0,
+    SHFetcherTypeTopHandicap = 0,
+    SHFetcherTypeEtiquette,
     SHFetcherTypeFavorite,
-    SHFetcherTypeFinder,
     SHFetcherTypeSearch,
+    SHFetcherTypeMember
 };
 
 

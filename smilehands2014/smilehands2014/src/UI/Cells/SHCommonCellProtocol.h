@@ -13,6 +13,8 @@
 
 - (void)refreshWithModel:(id<SHCommonModelProtocol>)model;
 
+@property (nonatomic, strong) id model;
+
 @end
 
 

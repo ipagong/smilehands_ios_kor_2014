@@ -15,6 +15,7 @@
 @dynamic status;
 @dynamic majorId;
 @dynamic imagePath;
+@dynamic title;
 @dynamic markDeleted;
 @dynamic reserved1;
 @dynamic reserved2;
@@ -22,7 +23,12 @@
 
 + (NSPredicate *)predicateExistHandicap
 {
-    return [NSPredicate predicateWithFormat:@"(deleted == NO)"];
+    return [NSPredicate predicateWithFormat:@"(markDeleted == NO)"];
+}
+
++ (NSPredicate *)predicateExistHandicapWithMajorId:(NSString *)majorId
+{
+    return [NSPredicate predicateWithFormat:@"(markDeleted == NO) AND (majorId == %@)", majorId];
 }
 
 + (NSString *)sortByCreateMajorId

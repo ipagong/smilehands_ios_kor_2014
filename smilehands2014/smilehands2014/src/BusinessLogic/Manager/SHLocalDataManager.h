@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#define kDefaultHandicapTitle         @"DefaultHandicapTitle"
+#define kDefaultHandicapBgImage       @"DefaultHandicapBgImage"
+#define kDefaultHandicapSuccessStatus @"200"
+
 @interface SHLocalDataManager : NSObject
 
 + (instancetype)sharedInstance;
@@ -15,16 +19,18 @@
 #pragma mark - handicap
 + (NSDictionary *)defaultHandicapInfoList;
 
-- (void)addKindHandicapWithMajorId:(NSString *)majorId
-                         imagePath:(NSString *)imagePath
-                            status:(NSString *)status;
+- (void)createKindHandicapWithMajorId:(NSString *)majorId
+                            imagePath:(NSString *)imagePath
+                                title:(NSString *)title
+                               status:(NSString *)status;
 
-- (BOOL)haveNotUpdatedKindHandicapped;
 - (NSArray *)allHandlicappedList;
+- (BOOL)isExistHandicappedWithMajorId:(NSString *)majorId;
+
 
 #pragma mark - etiquette
 
-- (void)addEtiqutteList:(NSArray *)etiquetteList;
+- (void)addEtiqutteList:(NSArray *)etiquetteList majorId:(NSString *)majorId;
 
 - (NSArray *)etiqutteListWithMajorId:(NSString *)majorId
                                 page:(NSInteger)page;
@@ -44,4 +50,5 @@
 #pragma mark - favorite
 - (void)setFavoriteSituationCode:(NSString *)situationCode
                       isFavorite:(BOOL)isFavorite;
+
 @end

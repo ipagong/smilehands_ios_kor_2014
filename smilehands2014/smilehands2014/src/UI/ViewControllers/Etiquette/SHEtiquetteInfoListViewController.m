@@ -7,6 +7,7 @@
 //
 
 #import "SHEtiquetteInfoListViewController.h"
+#import "SHEtiquetteInfoDetailViewController.h"
 
 @interface SHEtiquetteInfoListViewController ()
 
@@ -24,14 +25,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initCustomData
+{
+    [super initCustomData];
+    
+    self.currentCollectionView = self.collectionView;
 }
-*/
+
+- (SHFetcherType)fetcherType
+{
+    return SHFetcherTypeEtiquette;
+}
+
+- (id)fetcherParameter
+{
+    return self.majorId;
+}
+
+- (void)initCustomUI
+{
+    [self.collectionView setFrame:CGRectMake(0, 0,
+                                             CGRectGetWidth(self.view.bounds),
+                                             CGRectGetHeight(self.view.bounds))];
+    [self.collectionView setBackgroundColor:RGBColor(230, 230, 230)];
+    [self.collectionView setAlwaysBounceVertical:YES];
+    [self.view addSubview:self.collectionView];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(CGRectGetWidth(self.view.bounds), 101);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    SHEtiquetteInfoDetailViewController *detailVc = [[SHEtiquetteInfoDetailViewController alloc] initWithNibName:@"SHEtiquetteInfoDetailViewController"
+                                                                                                          bundle:nil];
+    
+    [self.navigationController pushViewController:detailVc animated:YES];
+}
 
 @end

@@ -21,6 +21,26 @@
 @dynamic reserved1;
 @dynamic reserved2;
 @dynamic handicap;
+@dynamic isFavorite;
+
+#pragma mark - predicate methods
+
++ (NSPredicate *)predicateExistEtiquette
+{
+    return [NSPredicate predicateWithFormat:@"(markDeleted == NO)"];
+}
+
++ (NSPredicate *)predicateExistEtiquetteWithMajorId:(NSString *)majorId
+{
+    return [NSPredicate predicateWithFormat:@"(markDeleted == NO) AND (majorId == %@)", majorId];
+}
+
+#pragma mark - sortDescriptor
+
++ (NSString *)sortByCreateSituation
+{
+    return @"situationCode,situation";
+}
 
 #pragma mark - model protocol
 
@@ -38,6 +58,7 @@
 {
     return CGSizeZero;
 }
+
 
 
 @end

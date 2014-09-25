@@ -11,4 +11,5 @@
 @interface  SHSearchViewController : SHCommonViewController
 
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
+
 @end

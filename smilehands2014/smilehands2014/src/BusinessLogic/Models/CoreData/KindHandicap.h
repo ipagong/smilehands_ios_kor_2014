@@ -13,9 +13,10 @@
 
 @interface KindHandicap : NSManagedObject <SHCommonModelProtocol>
 
-@property (nonatomic, retain) NSString * status;
+@property (nonatomic, retain) NSString * status; //
 @property (nonatomic, retain) NSString * majorId;
 @property (nonatomic, retain) NSString * imagePath;
+@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * markDeleted;
 @property (nonatomic, retain) NSString * reserved1;
 @property (nonatomic, retain) NSString * reserved2;
@@ -24,6 +25,7 @@
 #pragma mark - predicate methods
 
 + (NSPredicate *)predicateExistHandicap;
++ (NSPredicate *)predicateExistHandicapWithMajorId:(NSString *)majorId;
 
 #pragma mark - sortDescriptor
 

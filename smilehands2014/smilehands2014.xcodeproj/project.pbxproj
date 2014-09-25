@@ -99,6 +99,9 @@
 		18C8C1B219D34A85009C5186 /* SHSettingsMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1B019D34A85009C5186 /* SHSettingsMemberViewController.m */; };
 		18C8C1B319D34A85009C5186 /* SHSettingsMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C8C1B119D34A85009C5186 /* SHSettingsMemberViewController.xib */; };
 		18C8C1B619D34DFD009C5186 /* SHLocalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1B519D34DFD009C5186 /* SHLocalDataManager.m */; };
+		18C8C1B919D435C6009C5186 /* SHTopHandicapFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1B819D435C6009C5186 /* SHTopHandicapFetcher.m */; };
+		18C8C1BD19D44D16009C5186 /* SHEtiquetteResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1BC19D44D16009C5186 /* SHEtiquetteResponseModel.m */; };
+		18C8C1C019D4539B009C5186 /* SHEtiquteListFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C1BF19D4539B009C5186 /* SHEtiquteListFetcher.m */; };
 		49DC0D616B714E5FA716CD6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB165FEEF4484A2C91A7654A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +254,12 @@
 		18C8C1B119D34A85009C5186 /* SHSettingsMemberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHSettingsMemberViewController.xib; sourceTree = "<group>"; };
 		18C8C1B419D34DFD009C5186 /* SHLocalDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLocalDataManager.h; sourceTree = "<group>"; };
 		18C8C1B519D34DFD009C5186 /* SHLocalDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLocalDataManager.m; sourceTree = "<group>"; };
+		18C8C1B719D435C6009C5186 /* SHTopHandicapFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTopHandicapFetcher.h; sourceTree = "<group>"; };
+		18C8C1B819D435C6009C5186 /* SHTopHandicapFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTopHandicapFetcher.m; sourceTree = "<group>"; };
+		18C8C1BB19D44D16009C5186 /* SHEtiquetteResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEtiquetteResponseModel.h; sourceTree = "<group>"; };
+		18C8C1BC19D44D16009C5186 /* SHEtiquetteResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEtiquetteResponseModel.m; sourceTree = "<group>"; };
+		18C8C1BE19D4539B009C5186 /* SHEtiquteListFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHEtiquteListFetcher.h; sourceTree = "<group>"; };
+		18C8C1BF19D4539B009C5186 /* SHEtiquteListFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHEtiquteListFetcher.m; sourceTree = "<group>"; };
 		6C386D2FB5E04355898CA0CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CB165FEEF4484A2C91A7654A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -454,6 +463,7 @@
 		18B5261619CEC9660040698F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18C8C1BA19D44CFE009C5186 /* ResponseModel */,
 				18B5263219CEF7C90040698F /* CoreData */,
 				1806B45619D0A00B000C8507 /* SHCommonModelProtocol.h */,
 			);
@@ -657,8 +667,21 @@
 				18C8C15C19D31681009C5186 /* SHFetcherFactory.m */,
 				18C8C15E19D316D6009C5186 /* SHDefaultFetcher.h */,
 				18C8C15F19D316D6009C5186 /* SHDefaultFetcher.m */,
+				18C8C1B719D435C6009C5186 /* SHTopHandicapFetcher.h */,
+				18C8C1B819D435C6009C5186 /* SHTopHandicapFetcher.m */,
+				18C8C1BE19D4539B009C5186 /* SHEtiquteListFetcher.h */,
+				18C8C1BF19D4539B009C5186 /* SHEtiquteListFetcher.m */,
 			);
 			path = Fetcher;
+			sourceTree = "<group>";
+		};
+		18C8C1BA19D44CFE009C5186 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				18C8C1BB19D44D16009C5186 /* SHEtiquetteResponseModel.h */,
+				18C8C1BC19D44D16009C5186 /* SHEtiquetteResponseModel.m */,
+			);
+			path = ResponseModel;
 			sourceTree = "<group>";
 		};
 		BBFF10E33B66408D96329C69 /* Frameworks */ = {
@@ -875,16 +898,19 @@
 				1806B44819D0959C000C8507 /* SHEtiquetteRootViewController.m in Sources */,
 				18C8C16319D31770009C5186 /* SHDataList.m in Sources */,
 				18C8C19319D346F6009C5186 /* Etiquette.m in Sources */,
+				18C8C1BD19D44D16009C5186 /* SHEtiquetteResponseModel.m in Sources */,
 				18C8C17B19D336E4009C5186 /* SHBeaconUserViewCell.m in Sources */,
 				18B525F519CEC77B0040698F /* ViewController.m in Sources */,
 				18C8C17119D3289D009C5186 /* AppUtility.m in Sources */,
 				18C8C1A519D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m in Sources */,
+				18C8C1B919D435C6009C5186 /* SHTopHandicapFetcher.m in Sources */,
 				18C8C19619D346F6009C5186 /* KindHandicap.m in Sources */,
 				18B525F219CEC77B0040698F /* SmileHands2014.xcdatamodeld in Sources */,
 				18B5263819CFACBE0040698F /* SmileHTTPClient.m in Sources */,
 				18C8C19D19D34A05009C5186 /* SHEtiquetteInfoListViewController.m in Sources */,
 				18C8C18119D3378C009C5186 /* SHSettingsViewCell.m in Sources */,
 				18C8C15D19D31681009C5186 /* SHFetcherFactory.m in Sources */,
+				18C8C1C019D4539B009C5186 /* SHEtiquteListFetcher.m in Sources */,
 				1806B43B19D094B7000C8507 /* SHFavoriteViewController.m in Sources */,
 				18C8C16019D316D6009C5186 /* SHDefaultFetcher.m in Sources */,
 				18C8C1B619D34DFD009C5186 /* SHLocalDataManager.m in Sources */,

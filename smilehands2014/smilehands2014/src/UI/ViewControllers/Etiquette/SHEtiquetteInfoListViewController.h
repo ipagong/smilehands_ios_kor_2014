@@ -10,4 +10,6 @@
 
 @interface SHEtiquetteInfoListViewController : SHCommonViewController
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
+
+@property (nonatomic, strong) NSString *majorId;
 @end

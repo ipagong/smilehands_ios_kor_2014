@@ -23,7 +23,8 @@
 
 #pragma mark - predicate methods
 
-+ (NSPredicate *)predicateExistHandicap;
++ (NSPredicate *)predicateExistBeaconUser;
++ (NSPredicate *)predicateExistBeaconUserWithStatusCode:(NSString *)statusCode;
 
 #pragma mark - sortDescriptor
 

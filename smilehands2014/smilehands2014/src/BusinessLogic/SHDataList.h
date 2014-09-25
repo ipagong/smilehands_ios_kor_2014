@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kEmptySectionData @"emptySectionData"
+
 @interface SHDataList : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary *sectionData;

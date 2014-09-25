@@ -7,6 +7,9 @@
 //
 
 #import "SHEtiquetteRootViewController.h"
+#import "SHEtiquetteInfoListViewController.h"
+
+#define kDefaultTopHandicapCount 4
 
 @interface SHEtiquetteRootViewController ()
 
@@ -14,20 +17,15 @@
 
 @implementation SHEtiquetteRootViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     self.title = LocalString(@"title_etiquette");
 }
 
@@ -39,14 +37,46 @@
     return item;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (SHFetcherType)fetcherType
+{
+    return SHFetcherTypeTopHandicap;
 }
-*/
+
+- (void)initCustomData
+{
+    [super initCustomData];
+    
+    self.currentCollectionView = self.collectionView;
+}
+
+- (void)initCustomUI
+{
+    [self.collectionView setFrame:CGRectMake(0, 0,
+                                             CGRectGetWidth(self.view.bounds),
+                                             CGRectGetHeight(self.view.bounds))];
+    [self.collectionView setBackgroundColor:RGBColor(230, 230, 230)];
+    [self.collectionView setAlwaysBounceVertical:YES];
+    [self.view addSubview:self.collectionView];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(CGRectGetWidth(self.view.bounds),
+                      CGRectGetHeight(self.view.bounds)/kDefaultTopHandicapCount);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Etiquette *etiquette = [self.dataList itemAtIndexPath:indexPath];
+    
+    SHEtiquetteInfoListViewController *etiquetteInfoVc = [[SHEtiquetteInfoListViewController alloc] initWithNibName:@"SHEtiquetteInfoListViewController"
+                                                                                                             bundle:nil];
+    
+    etiquetteInfoVc.majorId = etiquette.majorId;
+    
+    [self.navigationController pushViewController:etiquetteInfoVc animated:YES];
+}
 
 @end

@@ -21,8 +21,17 @@
 @property (nonatomic, retain) NSNumber * markDeleted;
 @property (nonatomic, retain) NSString * reserved1;
 @property (nonatomic, retain) NSString * reserved2;
+@property (nonatomic, retain) NSNumber * isFavorite;
 @property (nonatomic, retain) KindHandicap *handicap;
 
+#pragma mark - predicate methods
+
++ (NSPredicate *)predicateExistEtiquette;
++ (NSPredicate *)predicateExistEtiquetteWithMajorId:(NSString *)majorId;
+
+#pragma mark - sortDescriptor
+
++ (NSString *)sortByCreateSituation;
 
 
 @end

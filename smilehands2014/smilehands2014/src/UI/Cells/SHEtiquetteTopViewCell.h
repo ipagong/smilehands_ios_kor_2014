@@ -10,4 +10,6 @@
 
 @interface SHEtiquetteTopViewCell : UICollectionViewCell <SHCommonCellProtocol>
 
+@property (nonatomic, strong) id model;
+
 @end

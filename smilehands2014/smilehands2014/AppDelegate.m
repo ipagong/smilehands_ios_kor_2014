@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SHApplicationCoreDataHelper.h"
+#import "SHApplicationEventHelper.h"
 
 #import "SHTabBarController.h"
 #import "SHFavoriteViewController.h"
@@ -26,6 +27,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [SHApplicationCoreDataHelper initCoreDataSetup];
+    
+    [SHApplicationEventHelper applicationDidFinishLaunchingWithOptions:launchOptions];
+
+    [self initAppearance];
     
     [self initWindows];
     
@@ -70,6 +75,23 @@
     [self.window makeKeyAndVisible];
 }
 
+
+- (void)initAppearance
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[UINavigationBar appearance] setBackgroundColor:RGBColor(219, 25, 57)];
+    [[UINavigationBar appearance] setBarTintColor:RGBColor(219, 25, 57)];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor whiteColor],
+                                                          NSForegroundColorAttributeName,
+                                                          nil]];
+    
+    [[UITabBar appearance] setBackgroundColor:RGBColor(219, 25, 57)];
+    [[UITabBar appearance] setBarTintColor:RGBColor(219, 25, 57)];
+    [[UITabBar appearance] setTranslucent:NO];
+}
 
 
 

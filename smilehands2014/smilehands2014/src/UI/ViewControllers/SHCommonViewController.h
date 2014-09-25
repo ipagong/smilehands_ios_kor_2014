@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "SHDataList.h"
+#import "SHFetcherFactory.h"
 
 @interface SHCommonViewController : UIViewController
-<UICollectionViewDelegate, UICollectionViewDataSource>
+<UICollectionViewDelegate, UICollectionViewDataSource, SHFetcherDelegate>
 
 @property (nonatomic, strong) SHDataList *dataList;
 @property (nonatomic, weak) UICollectionView *currentCollectionView;
+@property (nonatomic, strong) SHDefaultFetcher *fetcher;
 
+- (SHFetcherType)fetcherType;
+- (void)initCustomData;
+- (void)initCustomUI;
 @end

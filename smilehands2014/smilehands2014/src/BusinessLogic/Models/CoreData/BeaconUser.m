@@ -20,6 +20,26 @@
 @dynamic userImage;
 @dynamic markDeleted;
 
+#pragma mark - predicate methods
+
++ (NSPredicate *)predicateExistBeaconUser
+{
+    return [NSPredicate predicateWithFormat:@"(markDeleted == NO)"];
+}
+
++ (NSPredicate *)predicateExistBeaconUserWithStatusCode:(NSString *)statusCode
+{
+    return [NSPredicate predicateWithFormat:@"(markDeleted == NO) AND (statusCode == %@)", statusCode];
+}
+
+#pragma mark - sortDescriptor
+
++ (NSString *)sortByCreateMacAddress
+{
+    return @"macAddress,majorId";
+}
+
+
 #pragma mark - model protocol
 
 - (NSString *)cellKey

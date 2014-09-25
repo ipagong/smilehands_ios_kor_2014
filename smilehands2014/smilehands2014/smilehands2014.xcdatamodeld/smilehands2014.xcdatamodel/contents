@@ -12,6 +12,7 @@
     </entity>
     <entity name="Etiquette" representedClassName="Etiquette" syncable="YES">
         <attribute name="explain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="majorId" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="markDeleted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="reserved1" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,11 +29,12 @@
         <attribute name="reserved1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reserved2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="etiquette" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Etiquette" inverseName="handicap" inverseEntity="Etiquette" syncable="YES"/>
     </entity>
     <elements>
-        <element name="KindHandicap" positionX="-344" positionY="99" width="128" height="148"/>
-        <element name="Etiquette" positionX="-342" positionY="317" width="128" height="178"/>
+        <element name="KindHandicap" positionX="-344" positionY="99" width="128" height="163"/>
+        <element name="Etiquette" positionX="-342" positionY="317" width="128" height="193"/>
         <element name="BeaconUser" positionX="-623" positionY="158" width="128" height="163"/>
     </elements>
 </model>
