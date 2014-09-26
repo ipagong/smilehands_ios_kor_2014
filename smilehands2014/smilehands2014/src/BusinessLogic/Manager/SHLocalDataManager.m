@@ -83,12 +83,6 @@
     return NO;
 }
 
-- (BOOL)haveNotUpdatedKindHandicapped
-{
-    return NO;
-}
-
-
 #pragma mark - etiquette
 
 - (void)addEtiqutteList:(NSArray *)etiquetteList majorId:(NSString *)majorId
@@ -112,6 +106,14 @@
     return [Etiquette MR_findAllSortedBy:[Etiquette sortByCreateSituation]
                                ascending:NO
                            withPredicate:[Etiquette predicateExistEtiquetteWithMajorId:majorId]];
+}
+
+- (NSArray *)favoriteEtiqutteListWithMajorId:(NSString *)majorId
+                                        page:(NSInteger)page
+{
+    return [Etiquette MR_findAllSortedBy:[Etiquette sortByCreateSituation]
+                               ascending:NO
+                           withPredicate:[Etiquette predicateFavoriteEtiquetteWithMajorId:majorId]];
 }
 
 - (NSArray *)etiqutteListWithSearchText:(NSString *)majorId
@@ -139,10 +141,17 @@
 
 
 #pragma mark - favorite
-- (void)setFavoriteSituationCode:(NSString *)situationCode
-                      isFavorite:(BOOL)isFavorite
+
+- (void)setFavoriteEtiquette:(id)etiquette
+                  isFavorite:(BOOL)isFavorite;
 {
-    return;
+    if ([etiquette isKindOfClass:[Etiquette class]] == NO) return;
+    
+    [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+        
+        [[etiquette MR_inThreadContext] setIsFavorite:@(isFavorite)];
+
+    }];
 }
 
 @end

@@ -6,8 +6,10 @@
 //  Copyright (c) 2014년 smilehands. All rights reserved.
 //
 
-#import "SHCommonViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface SHEtiquetteInfoDetailViewController : SHCommonViewController
+@interface SHEtiquetteInfoDetailViewController : UIViewController
+
+@property (nonatomic, strong) Etiquette *ettiquete;
 
 @end

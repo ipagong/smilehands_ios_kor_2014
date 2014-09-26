@@ -66,6 +66,13 @@
         }
             break;
             
+        case SHFetcherResultTypeReloadSuccess:
+        {
+            [self.currentCollectionView performBatchUpdates:^{
+                [self.currentCollectionView reloadData];
+            } completion:^(BOOL finished) {}];
+        }
+            break;
         case SHFetcherResultTypeNoData:
         {
             [self.currentCollectionView reloadData];

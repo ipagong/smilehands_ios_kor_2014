@@ -37,3 +37,12 @@ settings_version_project_name = "SMILE HANDS";
 settings_version_info         = "Current Version %@";
 settings_version_newest       = "최신버전입니다";
 settings_version_update       = "업데이트하기";
+
+
+Confirm    = "완료";
+Ok         = "확인";
+Cancel     = "취소";
+Back       = "이전";
+
+PostingCanceld = "중지 되었습니다.";
+PostingSuccess = "포스팅이 정상적으로 처리되었습니다.";

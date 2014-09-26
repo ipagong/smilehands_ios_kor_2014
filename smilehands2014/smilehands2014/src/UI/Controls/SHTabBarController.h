@@ -12,5 +12,5 @@
 
 + (NSArray *)defaultTabViewControllers;
 + (NSArray *)tabClazzList;
-
++ (NSArray *)tabIconList;
 @end

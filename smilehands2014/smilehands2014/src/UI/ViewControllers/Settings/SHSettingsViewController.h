@@ -8,8 +8,9 @@
 
 #import "SHCommonViewController.h"
 
-@interface  SHSettingsViewController : SHCommonViewController
+@interface  SHSettingsViewController : UIViewController
+<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end

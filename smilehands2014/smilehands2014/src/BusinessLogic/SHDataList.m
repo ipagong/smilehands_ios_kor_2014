@@ -37,12 +37,10 @@
 {
     NSMutableArray *sectionData = [self.sectionData objectForKey:@(section)];
     
+    NSMutableArray *changedItems = [NSMutableArray arrayWithArray:items];
+    
     if (sectionData == nil) {
         sectionData = [[NSMutableArray alloc] init];
-    }
-    
-    if (items == nil) {
-        items = [NSMutableArray array];
     }
     
     if (sectionObject == nil) {
@@ -50,7 +48,7 @@
     }
     
     [sectionData insertObject:sectionObject atIndex:kSHDataDefaultSectionIndex];
-    [sectionData insertObject:items atIndex:kSHDataDefaultItemIndex];
+    [sectionData insertObject:changedItems atIndex:kSHDataDefaultItemIndex];
     
     [self.sectionData setObject:sectionData forKey:@(section)];
 }
@@ -66,7 +64,7 @@
     return [sectionData objectAtIndex:kSHDataDefaultSectionIndex];
 }
 
-- (NSArray *)itemsAtSection:(NSInteger)section
+- (NSMutableArray *)itemsAtSection:(NSInteger)section
 {
     NSMutableArray *sectionData = [self.sectionData objectForKey:@(section)];
     
@@ -85,7 +83,7 @@
         return nil;
     }
     
-    NSArray *items = [sectionData objectAtIndex:kSHDataDefaultItemIndex];
+    NSMutableArray *items = [sectionData objectAtIndex:kSHDataDefaultItemIndex];
     
     id file = nil;
     

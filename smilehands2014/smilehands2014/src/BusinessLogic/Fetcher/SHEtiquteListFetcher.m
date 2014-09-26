@@ -1,4 +1,4 @@
-//
+ //
 //  SHEtiquteListFetcher.m
 //  SmileHands2014
 //
@@ -30,7 +30,7 @@
         [self sendFetcherResultType:SHFetcherResultTypeSuccess error:nil];
     } else {
         [self sendFetcherResultType:SHFetcherResultTypeNoData error:nil];
-    }
+    }    
 }
 
 - (void)requestMore

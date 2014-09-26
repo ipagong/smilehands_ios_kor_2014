@@ -71,6 +71,19 @@
     
     [tabBarController setViewControllers:[SHTabBarController defaultTabViewControllers]];
     
+    NSInteger index = 0;
+    for (UITabBarItem *item in tabBarController.tabBar.items) {
+        
+        NSArray *imageList = [SHTabBarController tabIconList][index];
+
+        item.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+        item.titlePositionAdjustment = UIOffsetMake(0, 30);
+        [item setImage:[UIImage imageNamed:imageList[0]]];
+        [item setSelectedImage:[UIImage imageNamed:imageList[1]]];
+        
+        index ++;
+    }
+    
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
 }
@@ -87,9 +100,11 @@
                                                           [UIColor whiteColor],
                                                           NSForegroundColorAttributeName,
                                                           nil]];
-    
-    [[UITabBar appearance] setBackgroundColor:RGBColor(219, 25, 57)];
-    [[UITabBar appearance] setBarTintColor:RGBColor(219, 25, 57)];
+
+
+    [[UITabBar appearance] setBackgroundColor:RGBColor(255, 255, 255)];
+    [[UITabBar appearance] setBarTintColor:RGBColor(255, 255, 255)];
+    [[UITabBar appearance] setTintColor:[UIColor blackColor]];
     [[UITabBar appearance] setTranslucent:NO];
 }
 

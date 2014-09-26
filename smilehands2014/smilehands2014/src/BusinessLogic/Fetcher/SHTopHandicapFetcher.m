@@ -12,7 +12,7 @@
 
 - (void)requestUpdate
 {
-    // do nothing..
+
 }
 
 - (void)requestData

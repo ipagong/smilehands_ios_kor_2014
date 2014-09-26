@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SHSettingsViewController">
             <connections>
-                <outlet property="collectionView" destination="9X3-Kx-yEW" id="51k-Ut-2wY"/>
+                <outlet property="tableView" destination="2iM-8l-jZ0" id="eNG-Yt-0nH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +19,15 @@
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="386" y="340"/>
         </view>
-        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" id="9X3-Kx-yEW">
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2iM-8l-jZ0">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uo3-cO-Mc0">
-                <size key="itemSize" width="50" height="50"/>
-                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-            </collectionViewFlowLayout>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <connections>
-                <outlet property="dataSource" destination="-1" id="bx8-gK-tys"/>
-                <outlet property="delegate" destination="-1" id="viO-Zm-FKH"/>
+                <outlet property="dataSource" destination="-1" id="Ob5-lg-ghv"/>
+                <outlet property="delegate" destination="-1" id="oAd-uy-FNu"/>
             </connections>
-        </collectionView>
+        </tableView>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

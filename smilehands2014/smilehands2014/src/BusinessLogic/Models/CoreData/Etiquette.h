@@ -28,6 +28,7 @@
 
 + (NSPredicate *)predicateExistEtiquette;
 + (NSPredicate *)predicateExistEtiquetteWithMajorId:(NSString *)majorId;
++ (NSPredicate *)predicateFavoriteEtiquetteWithMajorId:(NSString *)majorId;
 
 #pragma mark - sortDescriptor
 

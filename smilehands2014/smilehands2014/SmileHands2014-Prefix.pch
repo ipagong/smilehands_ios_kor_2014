@@ -27,4 +27,6 @@
 
 #import "SHEtiquetteResponseModel.h"
 
+#import "SWSocialPostingHelper.h"
+
 #endif

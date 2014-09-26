@@ -22,6 +22,8 @@
         apiClient = [[SmileHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:SMILE_HANDS_BASE_URL_STRING]];
         apiClient.requestSerializer  = [AFHTTPRequestSerializer serializer];
         apiClient.responseSerializer = [AFJSONResponseSerializer serializer];
+        
+        [apiClient.operationQueue setMaxConcurrentOperationCount:1];
     });
     
     return apiClient;

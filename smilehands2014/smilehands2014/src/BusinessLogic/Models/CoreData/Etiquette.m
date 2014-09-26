@@ -35,11 +35,17 @@
     return [NSPredicate predicateWithFormat:@"(markDeleted == NO) AND (majorId == %@)", majorId];
 }
 
++ (NSPredicate *)predicateFavoriteEtiquetteWithMajorId:(NSString *)majorId
+{
+    return [NSPredicate predicateWithFormat:@"(markDeleted == NO) AND (isFavorite == YES) AND (majorId == %@)",
+            majorId];
+}
+
 #pragma mark - sortDescriptor
 
 + (NSString *)sortByCreateSituation
 {
-    return @"situationCode,situation";
+    return @"isFavorite,situationCode,situation";
 }
 
 #pragma mark - model protocol
@@ -58,7 +64,5 @@
 {
     return CGSizeZero;
 }
-
-
 
 @end

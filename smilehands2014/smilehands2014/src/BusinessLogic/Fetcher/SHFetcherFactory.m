@@ -25,7 +25,7 @@ static NSDictionary *gFetcherDictionary;
         gFetcherDictionary = @{
                                @(SHFetcherTypeTopHandicap) : @"SHTopHandicapFetcher",
                                @(SHFetcherTypeEtiquette)   : @"SHEtiquteListFetcher",
-                               @(SHFetcherTypeFavorite)    : @"SHFavoriteFetcher",
+                               @(SHFetcherTypeFavorite)    : @"SHFavoriteEtiquetteFetcher",
                                @(SHFetcherTypeSearch)      : @"SHSearchFetcher",
                                @(SHFetcherTypeMember)      : @"SHMemberFetcher"
                                };

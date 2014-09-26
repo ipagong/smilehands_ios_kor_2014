@@ -18,7 +18,7 @@
 
 - (id)seciontObjectAtSection:(NSInteger)section;
 
-- (NSArray *)itemsAtSection:(NSInteger)section;
+- (NSMutableArray *)itemsAtSection:(NSInteger)section;
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 

@@ -22,18 +22,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)beginCustomizingItems:(NSArray *)items
-{
-    for (id item in items) {
-        DLog(@"---> item : %@", item);
-    }
-}
-- (BOOL)endCustomizingAnimated:(BOOL)animated
-{
-    return NO;
-}
-
-
 + (NSArray *)defaultTabViewControllers
 {
     NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
@@ -63,6 +51,16 @@
              @"SHFavoriteViewController",
              @"SHBeaconFinderViewController",
              @"SHSettingsViewController",
+             ];
+}
+
++ (NSArray *)tabIconList
+{
+    return @[
+             @[@"btn_tab_home_nor"      , @"btn_tab_home_sel"],
+             @[@"btn_tab_favorite_nor"  , @"btn_tab_favorite_sel"],
+             @[@"btn_tab_near_nor"      , @"btn_tab_near_sel"],
+             @[@"btn_tab_setting_nor"   , @"btn_tab_setting_sel"]
              ];
 }
 

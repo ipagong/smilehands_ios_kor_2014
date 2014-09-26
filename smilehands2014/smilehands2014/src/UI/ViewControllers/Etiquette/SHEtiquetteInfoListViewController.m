@@ -61,9 +61,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    id etiquette = [self.dataList itemAtIndexPath:indexPath];
+    
     SHEtiquetteInfoDetailViewController *detailVc = [[SHEtiquetteInfoDetailViewController alloc] initWithNibName:@"SHEtiquetteInfoDetailViewController"
                                                                                                           bundle:nil];
-    
+    detailVc.ettiquete = etiquette;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 

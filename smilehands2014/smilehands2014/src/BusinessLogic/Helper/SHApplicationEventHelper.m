@@ -59,7 +59,7 @@
         
         [SHServiceManager etiquetteListWithMajorId:majorId
                                         completion:^(NSArray *result) {
-                                            
+                                            DLog(@"====> success");
                                             [[SHLocalDataManager sharedInstance] addEtiqutteList:result
                                                                                          majorId:majorId];
                                             
@@ -67,6 +67,8 @@
                                            failure:^(id error, BOOL isCancelled) {
                                              
                                                //TODO : 예외처리
+                                               DLog(@"----> error"
+                                                    );
                                                
                                            }];
     

@@ -36,7 +36,8 @@
                                 page:(NSInteger)page;
 
 - (NSArray *)etiqutteListWithSearchText:(NSString *)majorId;
-
+- (NSArray *)favoriteEtiqutteListWithMajorId:(NSString *)majorId
+                                        page:(NSInteger)page;
 
 #pragma mark - beacon
 - (NSArray *)oldBeaconUserNotInCurrentList:(NSArray *)currentBeaconList
@@ -48,7 +49,6 @@
 
 
 #pragma mark - favorite
-- (void)setFavoriteSituationCode:(NSString *)situationCode
-                      isFavorite:(BOOL)isFavorite;
-
+- (void)setFavoriteEtiquette:(id)etiquette
+                  isFavorite:(BOOL)isFavorite;
 @end
