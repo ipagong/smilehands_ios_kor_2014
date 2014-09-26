@@ -9,6 +9,9 @@
 #import "SHSettingsViewController.h"
 #import "SHSettingsTableViewCell.h"
 
+#import "SHSettingsVersionViewController.h"
+#import "SHSettingsMemberViewController.h"
+
 @interface SHSettingsViewController ()
 
 @end
@@ -81,8 +84,6 @@
         cell.backgroundColor = RGBColor(249, 250, 250);
     }
     
-    [[cell.contentView viewWithTag:kSettingsImageViewTag] removeFromSuperview];
-    
     NSArray *cellItem = [SHSettingsViewController sectionData][indexPath.section][indexPath.row];
     
     SHSettingType type = [cellItem[0] integerValue];
@@ -91,6 +92,8 @@
     
     if (type == SHSettingTypeTitle) {
         [cell.leftImageView setImage:[UIImage imageNamed:[cellItem lastObject]]];
+    } else if (type == SHSettingTypeAutoAlarm) {
+        [cell.sliderView setOn:[SHPreferences isOnAutoAlarm]];
     }
     
     [cell.textLabel setText:[cellItem objectAtIndex:1]];
@@ -99,5 +102,33 @@
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *cellItem = [SHSettingsViewController sectionData][indexPath.section][indexPath.row];
+    
+    NSNumber *type = [cellItem objectAtIndex:0];
+    
+    switch (type.integerValue) {
+        case SHSettingTypeVersionInfo:
+        {
+            SHSettingsVersionViewController *versionVc = [[SHSettingsVersionViewController alloc] initWithNibName:@"SHSettingsVersionViewController" bundle:nil];
+            
+            [self.navigationController pushViewController:versionVc animated:YES];
+        }
+            break;
+            
+        case SHSettingTypeCreator:
+        {
+            SHSettingsMemberViewController *memberVc = [[SHSettingsMemberViewController alloc] initWithNibName:@"SHSettingsMemberViewController" bundle:nil];
+            
+            [self.navigationController pushViewController:memberVc animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 
 @end

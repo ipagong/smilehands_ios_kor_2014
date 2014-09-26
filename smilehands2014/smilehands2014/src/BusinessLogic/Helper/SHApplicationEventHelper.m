@@ -49,30 +49,22 @@
 
 + (void)updateEtiqutteListIfNeeds
 {
-    NSArray *handicapList = [[SHLocalDataManager sharedInstance] allHandlicappedList];
+    NSDate *lastDate = [[SHLocalDataManager sharedInstance] lastDateEtiquette];
+
+    [SHServiceManager etiquetteListLastDate:lastDate
+                                 completion:^(NSArray *result) {
+                                     DLog(@"====> success");
+                                     [[SHLocalDataManager sharedInstance] addEtiqutteList:result];
+                                     
+                                 }
+                                    failure:^(id error, BOOL isCancelled) {
+                                        
+                                        //TODO : 예외처리
+                                        DLog(@"----> error"
+                                             );
+                                        
+                                    }];
     
-    for (KindHandicap *handicap in handicapList) {
-        
-        KindHandicap *handicapInContext = [handicap MR_inThreadContext];
-        
-        NSString *majorId = handicapInContext.majorId;
-        
-        [SHServiceManager etiquetteListWithMajorId:majorId
-                                        completion:^(NSArray *result) {
-                                            DLog(@"====> success");
-                                            [[SHLocalDataManager sharedInstance] addEtiqutteList:result
-                                                                                         majorId:majorId];
-                                            
-                                        }
-                                           failure:^(id error, BOOL isCancelled) {
-                                             
-                                               //TODO : 예외처리
-                                               DLog(@"----> error"
-                                                    );
-                                               
-                                           }];
-    
-    }
 }
 
 @end

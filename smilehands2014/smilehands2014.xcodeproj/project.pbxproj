@@ -43,7 +43,6 @@
 		18C8C17819D336BC009C5186 /* SHEtiquetteInfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17719D336BC009C5186 /* SHEtiquetteInfoViewCell.m */; };
 		18C8C17B19D336E4009C5186 /* SHBeaconUserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17A19D336E4009C5186 /* SHBeaconUserViewCell.m */; };
 		18C8C17E19D336F9009C5186 /* SHTeamMemberViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C17D19D336F9009C5186 /* SHTeamMemberViewCell.m */; };
-		18C8C18119D3378C009C5186 /* SHSettingsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C18019D3378C009C5186 /* SHSettingsViewCell.m */; };
 		18C8C19319D346F6009C5186 /* Etiquette.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C19219D346F6009C5186 /* Etiquette.m */; };
 		18C8C19619D346F6009C5186 /* KindHandicap.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C19519D346F6009C5186 /* KindHandicap.m */; };
 		18C8C19919D346F6009C5186 /* BeaconUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C19819D346F6009C5186 /* BeaconUser.m */; };
@@ -109,6 +108,13 @@
 		18C8C22719D49F15009C5186 /* SHSimpleSectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C22619D49F15009C5186 /* SHSimpleSectionReusableView.m */; };
 		18C8C22A19D4A70D009C5186 /* SWSocialPostingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C22919D4A70D009C5186 /* SWSocialPostingHelper.m */; };
 		18C8C22D19D4B8AA009C5186 /* SHSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C22C19D4B8AA009C5186 /* SHSettingsTableViewCell.m */; };
+		18C8C23019D59F33009C5186 /* SHMemberFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C22F19D59F33009C5186 /* SHMemberFetcher.m */; };
+		18C8C23319D59FDB009C5186 /* SHMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C23219D59FDB009C5186 /* SHMemberModel.m */; };
+		18C8C23519D5A94F009C5186 /* btn_update@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C8C23419D5A94F009C5186 /* btn_update@2x.png */; };
+		18C8C23819D5AB2A009C5186 /* UserDefaultsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C23719D5AB2A009C5186 /* UserDefaultsHelper.m */; };
+		18C8C23B19D5AB87009C5186 /* SHPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C23A19D5AB87009C5186 /* SHPreferences.m */; };
+		18C8C23E19D5C29F009C5186 /* SHSearchFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C23D19D5C29F009C5186 /* SHSearchFetcher.m */; };
+		18C8C24119D5C47B009C5186 /* SHBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8C24019D5C47B009C5186 /* SHBarButtonItem.m */; };
 		49DC0D616B714E5FA716CD6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB165FEEF4484A2C91A7654A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -196,8 +202,6 @@
 		18C8C17A19D336E4009C5186 /* SHBeaconUserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBeaconUserViewCell.m; sourceTree = "<group>"; };
 		18C8C17C19D336F9009C5186 /* SHTeamMemberViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTeamMemberViewCell.h; sourceTree = "<group>"; };
 		18C8C17D19D336F9009C5186 /* SHTeamMemberViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTeamMemberViewCell.m; sourceTree = "<group>"; };
-		18C8C17F19D3378C009C5186 /* SHSettingsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingsViewCell.h; sourceTree = "<group>"; };
-		18C8C18019D3378C009C5186 /* SHSettingsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingsViewCell.m; sourceTree = "<group>"; };
 		18C8C19119D346F6009C5186 /* Etiquette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Etiquette.h; sourceTree = "<group>"; };
 		18C8C19219D346F6009C5186 /* Etiquette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Etiquette.m; sourceTree = "<group>"; };
 		18C8C19419D346F6009C5186 /* KindHandicap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindHandicap.h; sourceTree = "<group>"; };
@@ -279,6 +283,19 @@
 		18C8C22919D4A70D009C5186 /* SWSocialPostingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSocialPostingHelper.m; sourceTree = "<group>"; };
 		18C8C22B19D4B8AA009C5186 /* SHSettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSettingsTableViewCell.h; sourceTree = "<group>"; };
 		18C8C22C19D4B8AA009C5186 /* SHSettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSettingsTableViewCell.m; sourceTree = "<group>"; };
+		18C8C22E19D59F33009C5186 /* SHMemberFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMemberFetcher.h; sourceTree = "<group>"; };
+		18C8C22F19D59F33009C5186 /* SHMemberFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberFetcher.m; sourceTree = "<group>"; };
+		18C8C23119D59FDB009C5186 /* SHMemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMemberModel.h; sourceTree = "<group>"; };
+		18C8C23219D59FDB009C5186 /* SHMemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMemberModel.m; sourceTree = "<group>"; };
+		18C8C23419D5A94F009C5186 /* btn_update@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_update@2x.png"; sourceTree = "<group>"; };
+		18C8C23619D5AB2A009C5186 /* UserDefaultsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsHelper.h; sourceTree = "<group>"; };
+		18C8C23719D5AB2A009C5186 /* UserDefaultsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsHelper.m; sourceTree = "<group>"; };
+		18C8C23919D5AB87009C5186 /* SHPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHPreferences.h; sourceTree = "<group>"; };
+		18C8C23A19D5AB87009C5186 /* SHPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHPreferences.m; sourceTree = "<group>"; };
+		18C8C23C19D5C29F009C5186 /* SHSearchFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSearchFetcher.h; sourceTree = "<group>"; };
+		18C8C23D19D5C29F009C5186 /* SHSearchFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSearchFetcher.m; sourceTree = "<group>"; };
+		18C8C23F19D5C47B009C5186 /* SHBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBarButtonItem.h; sourceTree = "<group>"; };
+		18C8C24019D5C47B009C5186 /* SHBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBarButtonItem.m; sourceTree = "<group>"; };
 		6C386D2FB5E04355898CA0CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CB165FEEF4484A2C91A7654A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -489,6 +506,8 @@
 				1806B45619D0A00B000C8507 /* SHCommonModelProtocol.h */,
 				18C8C22219D49E84009C5186 /* SHSimpleSectionModel.h */,
 				18C8C22319D49E84009C5186 /* SHSimpleSectionModel.m */,
+				18C8C23119D59FDB009C5186 /* SHMemberModel.h */,
+				18C8C23219D59FDB009C5186 /* SHMemberModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -516,8 +535,6 @@
 				18C8C17A19D336E4009C5186 /* SHBeaconUserViewCell.m */,
 				18C8C17C19D336F9009C5186 /* SHTeamMemberViewCell.h */,
 				18C8C17D19D336F9009C5186 /* SHTeamMemberViewCell.m */,
-				18C8C17F19D3378C009C5186 /* SHSettingsViewCell.h */,
-				18C8C18019D3378C009C5186 /* SHSettingsViewCell.m */,
 				18C8C22519D49F15009C5186 /* SHSimpleSectionReusableView.h */,
 				18C8C22619D49F15009C5186 /* SHSimpleSectionReusableView.m */,
 				18C8C22B19D4B8AA009C5186 /* SHSettingsTableViewCell.h */,
@@ -531,6 +548,8 @@
 			children = (
 				1806B41919D092B1000C8507 /* SHTabBarController.h */,
 				1806B41A19D092B1000C8507 /* SHTabBarController.m */,
+				18C8C23F19D5C47B009C5186 /* SHBarButtonItem.h */,
+				18C8C24019D5C47B009C5186 /* SHBarButtonItem.m */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -559,10 +578,14 @@
 		18B5261C19CEC9660040698F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				18C8C23619D5AB2A009C5186 /* UserDefaultsHelper.h */,
+				18C8C23719D5AB2A009C5186 /* UserDefaultsHelper.m */,
 				18C8C16D19D3289D009C5186 /* AppUtility.h */,
 				18C8C16E19D3289D009C5186 /* AppUtility.m */,
 				18C8C16F19D3289D009C5186 /* UIColor+Addition.h */,
 				18C8C17019D3289D009C5186 /* UIColor+Addition.m */,
+				18C8C23919D5AB87009C5186 /* SHPreferences.h */,
+				18C8C23A19D5AB87009C5186 /* SHPreferences.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -579,6 +602,7 @@
 		18B5261E19CEC96E0040698F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18C8C23419D5A94F009C5186 /* btn_update@2x.png */,
 				18C8C1C519D4712C009C5186 /* btn_favorite_selected@2x.png */,
 				18C8C1C619D4712C009C5186 /* btn_favorite_normal@2x.png */,
 				18C8C1C719D4712C009C5186 /* smilehands@2x.png */,
@@ -702,6 +726,10 @@
 				18C8C1BF19D4539B009C5186 /* SHEtiquteListFetcher.m */,
 				18C8C21F19D48B92009C5186 /* SHFavoriteEtiquetteFetcher.h */,
 				18C8C22019D48B92009C5186 /* SHFavoriteEtiquetteFetcher.m */,
+				18C8C22E19D59F33009C5186 /* SHMemberFetcher.h */,
+				18C8C22F19D59F33009C5186 /* SHMemberFetcher.m */,
+				18C8C23C19D5C29F009C5186 /* SHSearchFetcher.h */,
+				18C8C23D19D5C29F009C5186 /* SHSearchFetcher.m */,
 			);
 			path = Fetcher;
 			sourceTree = "<group>";
@@ -808,6 +836,7 @@
 				18C8C20C19D4712C009C5186 /* btn_back@2x.png in Resources */,
 				1806B45319D0962A000C8507 /* SHSettingsViewController.xib in Resources */,
 				18B525F819CEC77B0040698F /* Main.storyboard in Resources */,
+				18C8C23519D5A94F009C5186 /* btn_update@2x.png in Resources */,
 				18C8C1B319D34A85009C5186 /* SHSettingsMemberViewController.xib in Resources */,
 				18C8C1F619D4712C009C5186 /* designer02@2x.png in Resources */,
 				18C8C20F19D4712C009C5186 /* btn_tab_home_nor@2x.png in Resources */,
@@ -923,11 +952,15 @@
 				18C8C1B219D34A85009C5186 /* SHSettingsMemberViewController.m in Sources */,
 				1806B41B19D092B1000C8507 /* SHTabBarController.m in Sources */,
 				18B525EC19CEC77B0040698F /* main.m in Sources */,
+				18C8C23319D59FDB009C5186 /* SHMemberModel.m in Sources */,
+				18C8C23019D59F33009C5186 /* SHMemberFetcher.m in Sources */,
 				18C8C22719D49F15009C5186 /* SHSimpleSectionReusableView.m in Sources */,
 				18C8C1AD19D34A74009C5186 /* SHSettingsVersionViewController.m in Sources */,
+				18C8C24119D5C47B009C5186 /* SHBarButtonItem.m in Sources */,
 				18C8C17519D3364D009C5186 /* SHEtiquetteTopViewCell.m in Sources */,
 				18C8C17219D3289D009C5186 /* UIColor+Addition.m in Sources */,
 				18C8C17E19D336F9009C5186 /* SHTeamMemberViewCell.m in Sources */,
+				18C8C23819D5AB2A009C5186 /* UserDefaultsHelper.m in Sources */,
 				18C8C16619D31D84009C5186 /* SHServiceManager.m in Sources */,
 				1806B41819D08AD8000C8507 /* SHApplicationCoreDataHelper.m in Sources */,
 				18C8C16919D31DA2009C5186 /* SHApplicationEventHelper.m in Sources */,
@@ -938,13 +971,14 @@
 				18C8C17B19D336E4009C5186 /* SHBeaconUserViewCell.m in Sources */,
 				18B525F519CEC77B0040698F /* ViewController.m in Sources */,
 				18C8C17119D3289D009C5186 /* AppUtility.m in Sources */,
+				18C8C23E19D5C29F009C5186 /* SHSearchFetcher.m in Sources */,
 				18C8C1A519D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m in Sources */,
 				18C8C1B919D435C6009C5186 /* SHTopHandicapFetcher.m in Sources */,
 				18C8C19619D346F6009C5186 /* KindHandicap.m in Sources */,
+				18C8C23B19D5AB87009C5186 /* SHPreferences.m in Sources */,
 				18B525F219CEC77B0040698F /* SmileHands2014.xcdatamodeld in Sources */,
 				18B5263819CFACBE0040698F /* SmileHTTPClient.m in Sources */,
 				18C8C19D19D34A05009C5186 /* SHEtiquetteInfoListViewController.m in Sources */,
-				18C8C18119D3378C009C5186 /* SHSettingsViewCell.m in Sources */,
 				18C8C22419D49E84009C5186 /* SHSimpleSectionModel.m in Sources */,
 				18C8C15D19D31681009C5186 /* SHFetcherFactory.m in Sources */,
 				18C8C1C019D4539B009C5186 /* SHEtiquteListFetcher.m in Sources */,

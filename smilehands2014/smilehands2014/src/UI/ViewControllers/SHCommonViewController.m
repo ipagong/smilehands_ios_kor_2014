@@ -7,6 +7,7 @@
 //
 
 #import "SHCommonViewController.h"
+#import "SHSearchViewController.h"
 
 @implementation SHCommonViewController
 
@@ -49,10 +50,32 @@
     [super viewWillAppear:animated];
     
     [self initCustomUI];
+    [self setupNavigationBar];
     
     if (self.fetcher) {
         [self.fetcher requestData];
     }
+
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if(self.navigationController.viewControllers.count > 1) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - fetcher delegate
@@ -81,6 +104,46 @@
         default:
             break;
     }
+}
+
+- (void)setupNavigationBar
+{
+    [self setupNavigationBarLeft];
+    [self setupNavigationBarRight];
+}
+
+- (void)setupNavigationBarLeft
+{
+    if (self.navigationController && self.navigationController.viewControllers.count > 1) {
+        
+        SHBarButtonItem *previous = [SHBarButtonItem addBarButtonTitle:nil
+                                                          defaultImage:[UIImage imageNamed:@"btn_back"]
+                                                        highlightImage:nil target:self action:@selector(onClickBackButton:)];
+        self.navigationItem.leftBarButtonItem = previous;
+    }
+}
+
+- (void)setupNavigationBarRight
+{
+    SHBarButtonItem *search = [SHBarButtonItem addBarButtonTitle:nil
+                                                    defaultImage:[UIImage imageNamed:@"btn_search"]
+                                                  highlightImage:nil target:self action:@selector(onClickSearch:)];
+    self.navigationItem.rightBarButtonItem = search;
+}
+
+- (void)onClickBackButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)onClickSearch:(id)sender
+{
+    SHSearchViewController *searchVc = [[SHSearchViewController alloc] initWithNibName:@"SHSearchViewController"
+                                                                                bundle:nil];
+    
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:searchVc];
+    
+    [self.navigationController presentViewController:navi animated:YES completion:nil];
 }
 
 #pragma mark - layout methods

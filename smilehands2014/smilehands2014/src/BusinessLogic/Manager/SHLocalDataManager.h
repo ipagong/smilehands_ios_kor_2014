@@ -26,16 +26,18 @@
 
 - (NSArray *)allHandlicappedList;
 - (BOOL)isExistHandicappedWithMajorId:(NSString *)majorId;
-
+- (NSDate *)lastDateEtiquette;
 
 #pragma mark - etiquette
 
-- (void)addEtiqutteList:(NSArray *)etiquetteList majorId:(NSString *)majorId;
+- (void)addEtiqutteList:(NSArray *)etiquetteList;
 
 - (NSArray *)etiqutteListWithMajorId:(NSString *)majorId
                                 page:(NSInteger)page;
 
-- (NSArray *)etiqutteListWithSearchText:(NSString *)majorId;
+- (NSArray *)etiqutteListWithSearchText:(NSString *)text
+                                majorId:(NSString *)majorId;
+
 - (NSArray *)favoriteEtiqutteListWithMajorId:(NSString *)majorId
                                         page:(NSInteger)page;
 

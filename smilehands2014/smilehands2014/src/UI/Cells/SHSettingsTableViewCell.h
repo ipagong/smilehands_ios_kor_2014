@@ -20,8 +20,8 @@ typedef NS_ENUM(NSInteger, SHSettingType) {
 @interface SHSettingsTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView *leftImageView;
-@property (nonatomic, strong) UIImageView *arrow;
-@property (nonatomic, strong) UISwitch *slider;
+@property (nonatomic, strong) UIImageView *arrowView;
+@property (nonatomic, strong) UISwitch *sliderView;
 
 @property (nonatomic, assign) SHSettingType type;
 

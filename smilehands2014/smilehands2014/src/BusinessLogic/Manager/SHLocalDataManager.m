@@ -83,21 +83,57 @@
     return NO;
 }
 
+- (NSDate *)lastDateEtiquette
+{
+    Etiquette *etiquette = [Etiquette MR_findFirstWithPredicate:[Etiquette predicateExistEtiquette]
+                                                       sortedBy:[Etiquette sortByLastDate]
+                                                      ascending:NO];
+    
+    return etiquette.lastDate;
+}
+
 #pragma mark - etiquette
 
-- (void)addEtiqutteList:(NSArray *)etiquetteList majorId:(NSString *)majorId
+- (void)addEtiqutteList:(NSArray *)etiquetteList
 {
     for (SHEtiquetteResponseModel *model in etiquetteList) {
         
-        [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-            Etiquette *etiquette = [Etiquette MR_createEntity];
+        Etiquette *findEtiquette = [self findEtiquetteWithKey:model.eId];
+        
+        if (findEtiquette == nil) {
+        
+            [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+                Etiquette *etiquette = [Etiquette MR_createEntity];
+                
+                [etiquette setExplain:model.explain];
+                [etiquette setMajorId:model.majorId];
+                
+                [etiquette setSituationCode:model.eId];
+                [etiquette setSituation:model.situation];
+                
+            }];
             
-            [etiquette setExplain:model.explain];
-            [etiquette setMajorId:majorId];
-            [etiquette setSituation:model.situation];
+        } else {
             
-        }];
+            [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+
+                Etiquette *etiquette = [findEtiquette MR_inThreadContext];
+                
+                [etiquette setExplain:model.explain];
+                [etiquette setMajorId:model.majorId];
+                
+                [etiquette setSituationCode:model.eId];
+                [etiquette setSituation:model.situation];
+                
+            }];
+            
+        }
     }
+}
+
+- (id)findEtiquetteWithKey:(NSString *)key
+{
+    return [Etiquette MR_findFirstWithPredicate:[Etiquette predicateWithSituationCode:key]];
 }
 
 - (NSArray *)etiqutteListWithMajorId:(NSString *)majorId
@@ -116,11 +152,12 @@
                            withPredicate:[Etiquette predicateFavoriteEtiquetteWithMajorId:majorId]];
 }
 
-- (NSArray *)etiqutteListWithSearchText:(NSString *)majorId
+- (NSArray *)etiqutteListWithSearchText:(NSString *)text majorId:(NSString *)majorId
 {
-    return nil;
+    return [Etiquette MR_findAllSortedBy:[Etiquette sortByCreateSituation]
+                               ascending:NO
+                           withPredicate:[Etiquette predicateWithSearchText:text majorId:majorId]];
 }
-
 
 #pragma mark - beacon
 - (NSArray *)oldBeaconUserNotInCurrentList:(NSArray *)currentBeaconList

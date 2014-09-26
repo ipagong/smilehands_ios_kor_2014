@@ -10,9 +10,9 @@
 
 @interface SHServiceManager : NSObject
 
-+ (void)etiquetteListWithMajorId:(NSString *)majorId
-                      completion:(void (^)(id result))completion
-                         failure:(void (^)(id error, BOOL isCancelled))failure;
++ (void)etiquetteListLastDate:(NSDate *)date
+                   completion:(void (^)(id result))completion
+                      failure:(void (^)(id error, BOOL isCancelled))failure;
 
 + (void)registBeaconInfoWithMacAddr:(NSString *)macAddr
                          completion:(void (^)(id result))completion

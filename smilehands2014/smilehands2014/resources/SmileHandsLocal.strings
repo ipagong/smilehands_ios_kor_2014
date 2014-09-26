@@ -13,7 +13,7 @@ title_beacon    = "주변탐색";
 title_settings  = "환경설정";
 title_creators  = "만든사람들";
 
-title_etiquette_specific = "%@ 에티켓";
+title_etiquette_specific = "%@ 장애 에티켓";
 title_etiquette_info     = "상세에티켓";
 
 settings_alarm_title    = "알림설정";
@@ -31,7 +31,7 @@ settings_member_design   = "디자인";
 label_search          = "검색";
 label_search_info     = "장애 유형별, 상황별 에티켓을 검색해보세요.";
 label_cancel          = "취소";
-label_cancel          = "취소";
+
 
 settings_version_project_name = "SMILE HANDS";
 settings_version_info         = "Current Version %@";

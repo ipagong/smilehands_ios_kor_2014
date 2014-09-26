@@ -7,6 +7,7 @@
 //
 
 #import "SHEtiquetteInfoDetailViewController.h"
+#import "SHSearchViewController.h"
 
 @interface SHEtiquetteInfoDetailViewController () <UIScrollViewDelegate>
 
@@ -53,6 +54,8 @@
     NSString *extendExplain = [oneLineString stringByReplacingOccurrencesOfString:@"."
                                                                        withString:@".\n\n "];
     
+    [self setupNavigationBar];
+    
     [self.explainLabel setText:extendExplain];
     
     Etiquette *etiquette = [self.ettiquete MR_inThreadContext];
@@ -63,6 +66,23 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+}
+
+
+- (void)setupNavigationBar
+{
+    [self setupNavigationBarLeft];
+}
+
+- (void)setupNavigationBarLeft
+{
+    if (self.navigationController && self.navigationController.viewControllers.count > 1) {
+        
+        SHBarButtonItem *previous = [SHBarButtonItem addBarButtonTitle:nil
+                                                          defaultImage:[UIImage imageNamed:@"btn_back"]
+                                                        highlightImage:nil target:self action:@selector(onClickBackButton:)];
+        self.navigationItem.leftBarButtonItem = previous;
+    }
 }
 
 - (void)initTopContents
@@ -209,6 +229,21 @@
                                         viewController:self];
 }
 
+
+- (void)onClickBackButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)onClickSearch:(id)sender
+{
+    SHSearchViewController *searchVc = [[SHSearchViewController alloc] initWithNibName:@"SHSearchViewController"
+                                                                                bundle:nil];
+    
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:searchVc];
+    
+    [self.navigationController presentViewController:navi animated:YES completion:nil];
+}
 
 
 @end

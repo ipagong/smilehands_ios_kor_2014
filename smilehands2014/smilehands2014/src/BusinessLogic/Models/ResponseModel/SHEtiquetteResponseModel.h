@@ -17,5 +17,9 @@
 @property (nonatomic, strong) NSString *explain;
 @property (nonatomic, strong) NSString *situation;
 @property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) NSString *majorId;
+@property (nonatomic, strong) NSString *lastUpdate;
+@property (nonatomic, strong) NSString *eId;
+
 
 @end

@@ -14,11 +14,19 @@
 @implementation SHServiceManager
 
 
-+ (void)etiquetteListWithMajorId:(NSString *)majorId
-                      completion:(void (^)(id result))completion
-                         failure:(void (^)(id error, BOOL isCancelled))failure
++ (void)etiquetteListLastDate:(NSDate *)date
+                   completion:(void (^)(id result))completion
+                      failure:(void (^)(id error, BOOL isCancelled))failure
 {
-    NSDictionary *parameter = @{@"majorId": majorId,
+    NSString *lastDateString = nil;
+    
+    if (date == nil) {
+        lastDateString = @"1986-04-08 00:00:00";
+    } else {
+        lastDateString = [AppUtility dateStringWithDate:date];
+    }
+    
+    NSDictionary *parameter = @{@"lastDate": lastDateString,
                                 @"status" : KServiceParameterPublish};
     
     [[SmileHTTPClient apiClient] postPath:@"/etiquette/list.do"

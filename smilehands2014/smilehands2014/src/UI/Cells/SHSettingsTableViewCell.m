@@ -22,14 +22,20 @@
 - (void)makeDefaultView
 {
     self.leftImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [self.contentView addSubview:self.leftImageView];
+    [self addSubview:self.leftImageView];
     
-    self.arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"setting_open"]];
-    [self.contentView addSubview:self.arrow];
+    self.arrowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"setting_open"]];
+    [self addSubview:self.arrowView];
     
-    self.slider = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    [self.slider setTintColor:[UIColor colorWithRGB:0xdb1939]];
-    [self.contentView addSubview:self.slider];
+    self.sliderView = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    [self.sliderView setTintColor:[UIColor colorWithRGB:0xdb1939]];
+    [self.sliderView setOnTintColor:[UIColor colorWithRGB:0xdb1939]];
+    
+    [self.sliderView addTarget:self
+                        action:@selector(changedSwitchValue:)
+              forControlEvents:UIControlEventValueChanged];
+    
+    [self addSubview:self.sliderView];
 }
 
 - (void)layoutSubviews
@@ -40,16 +46,19 @@
     [self.leftImageView setFrame:CGRectMake(15, 7.25,
                                             self.leftImageView.image.size.width,
                                             self.leftImageView.image.size.height)];
-    [self.slider setCenter:self.textLabel.center];
-    [self.slider setFrame:CGRectMake(CGRectGetWidth(self.contentView.bounds) - CGRectGetWidth(self.slider.frame) - 15,
-                                     CGRectGetMinY(self.slider.frame),
-                                     CGRectGetWidth(self.slider.frame),
-                                     CGRectGetHeight(self.slider.frame))];
-    [self.arrow setCenter:self.slider.center];
+    [self.sliderView setCenter:self.textLabel.center];
+    [self.sliderView setFrame:CGRectMake(CGRectGetWidth(self.bounds) - 60,
+                                     7, 100, 30)];
+    
+    [self.arrowView setCenter:self.textLabel.center];
+    [self.arrowView setFrame:CGRectMake(CGRectGetWidth(self.contentView.bounds) - 15 - self.arrowView.image.size.width,
+                                    CGRectGetMinY(self.arrowView.frame),
+                                    self.arrowView.image.size.width,
+                                    self.arrowView.image.size.height)];
     
     [self.leftImageView setHidden:YES];
-    [self.slider    setHidden:YES];
-    [self.arrow     setHidden:YES];
+    [self.sliderView    setHidden:YES];
+    [self.arrowView     setHidden:YES];
     
     [self setSelectionStyle:UITableViewCellSelectionStyleGray];
     
@@ -69,6 +78,7 @@
                                                 CGRectGetMinY(self.textLabel.frame),
                                                 CGRectGetWidth(self.textLabel.frame),
                                                 CGRectGetHeight(self.textLabel.frame))];
+            
             [self.textLabel setTextColor:[UIColor blackColor]];
             
         }
@@ -76,19 +86,20 @@
             
         case SHSettingTypeVersionInfo:
         {
-            [self.arrow setHidden:NO];
+            [self.arrowView setHidden:NO];
         }
             break;
             
         case SHSettingTypeCreator:
         {
-            [self.arrow setHidden:NO];
+            [self.arrowView setHidden:NO];
         }
             break;
             
         case SHSettingTypeAutoAlarm:
         {
-            [self.slider setHidden:NO];
+            [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+            [self.sliderView setHidden:NO];
         }
             break;
             
@@ -96,4 +107,22 @@
             break;
     }
 }
+
+- (void)changedSwitchValue:(UISwitch *)slideView
+{
+    DLog(@"---> %d",slideView.isOn);
+    
+    [SHPreferences setOnAutoAlarm:slideView.isOn];
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    
+}
+
 @end

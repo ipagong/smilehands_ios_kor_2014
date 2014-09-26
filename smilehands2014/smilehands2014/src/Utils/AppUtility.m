@@ -182,4 +182,30 @@
 }
 
 
++ (NSString *)dateStringWithDate:(NSDate *)date
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *stringDate = [format stringFromDate:date];
+    return stringDate;
+}
+
+
++ (NSDate *)dateWithString:(NSString *)stringDate
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSDate *date = nil;
+    
+    @try {
+        date = [dateFormatter dateFromString:stringDate];
+    }
+    @catch (NSException *exception) {
+
+    }
+    
+    return date;    
+}
+
 @end

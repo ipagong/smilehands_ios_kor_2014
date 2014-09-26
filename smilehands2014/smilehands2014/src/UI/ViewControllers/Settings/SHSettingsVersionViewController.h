@@ -6,8 +6,8 @@
 //  Copyright (c) 2014년 smilehands. All rights reserved.
 //
 
-#import "SHCommonViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface SHSettingsVersionViewController : SHCommonViewController
+@interface SHSettingsVersionViewController : UIViewController
 
 @end

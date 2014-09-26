@@ -29,4 +29,7 @@
 
 #import "SWSocialPostingHelper.h"
 
+#import "SHPreferences.h"
+#import "SHBarButtonItem.h"
+
 #endif

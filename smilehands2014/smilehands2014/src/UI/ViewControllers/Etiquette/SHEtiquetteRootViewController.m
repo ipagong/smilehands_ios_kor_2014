@@ -69,12 +69,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    Etiquette *etiquette = [self.dataList itemAtIndexPath:indexPath];
+    KindHandicap *handicap = [self.dataList itemAtIndexPath:indexPath];
     
     SHEtiquetteInfoListViewController *etiquetteInfoVc = [[SHEtiquetteInfoListViewController alloc] initWithNibName:@"SHEtiquetteInfoListViewController"
                                                                                                              bundle:nil];
     
-    etiquetteInfoVc.majorId = etiquette.majorId;
+    etiquetteInfoVc.majorId = handicap.majorId;
+    etiquetteInfoVc.title = [NSString stringWithFormat:LocalString(@"title_etiquette_specific"), handicap.title];
     
     [self.navigationController pushViewController:etiquetteInfoVc animated:YES];
 }

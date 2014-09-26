@@ -18,6 +18,12 @@
         
         for (NSString *key in dictionary.allKeys) {
             
+            id value = dictionary[key];
+            
+            if (value == nil || [[NSNull null] isEqual:value] == YES) {
+                continue;
+            }
+            
             @try {
                 [self setValue:dictionary[key] forKey:key];
             }

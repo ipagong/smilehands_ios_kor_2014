@@ -30,4 +30,8 @@
 + (NSString *)stringStopWatchTimeWithTime:(NSTimeInterval)time;
 + (void)showSpinnerIndicatorWithView:(UIView *)superView;
 + (void)hideSpinnerIndicatorWithView:(UIView *)superView;
+
++ (NSString *)dateStringWithDate:(NSDate *)date;
++ (NSDate *)dateWithString:(NSString *)stringDate;
+
 @end
