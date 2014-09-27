@@ -20,6 +20,10 @@
 		1806B45219D0962A000C8507 /* SHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806B45019D0962A000C8507 /* SHSettingsViewController.m */; };
 		1806B45319D0962A000C8507 /* SHSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1806B45119D0962A000C8507 /* SHSettingsViewController.xib */; };
 		1806B45519D09900000C8507 /* SmileHandsLocal.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1806B45419D09900000C8507 /* SmileHandsLocal.strings */; };
+		1834F32119D65141002733AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834F32019D65141002733AA /* CoreLocation.framework */; };
+		1884712C19D601110074ECEB /* WZBeacon+SHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884712B19D601110074ECEB /* WZBeacon+SHModel.m */; };
+		1884712F19D637730074ECEB /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1884712D19D637730074ECEB /* photo@2x.png */; };
+		1884713019D637730074ECEB /* section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1884712E19D637730074ECEB /* section@2x.png */; };
 		18B525EC19CEC77B0040698F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B525EB19CEC77B0040698F /* main.m */; };
 		18B525EF19CEC77B0040698F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B525EE19CEC77B0040698F /* AppDelegate.m */; };
 		18B525F219CEC77B0040698F /* SmileHands2014.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B525F019CEC77B0040698F /* SmileHands2014.xcdatamodeld */; };
@@ -151,6 +155,11 @@
 		1806B45419D09900000C8507 /* SmileHandsLocal.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = SmileHandsLocal.strings; sourceTree = "<group>"; };
 		1806B45619D0A00B000C8507 /* SHCommonModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCommonModelProtocol.h; sourceTree = "<group>"; };
 		1806B45719D0A01E000C8507 /* SHCommonCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCommonCellProtocol.h; sourceTree = "<group>"; };
+		1834F32019D65141002733AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1884712A19D601110074ECEB /* WZBeacon+SHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WZBeacon+SHModel.h"; sourceTree = "<group>"; };
+		1884712B19D601110074ECEB /* WZBeacon+SHModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WZBeacon+SHModel.m"; sourceTree = "<group>"; };
+		1884712D19D637730074ECEB /* photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo@2x.png"; sourceTree = "<group>"; };
+		1884712E19D637730074ECEB /* section@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "section@2x.png"; sourceTree = "<group>"; };
 		18B525E619CEC77B0040698F /* SmileHands2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmileHands2014.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B525EA19CEC77B0040698F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B525EB19CEC77B0040698F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -305,6 +314,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1834F32119D65141002733AA /* CoreLocation.framework in Frameworks */,
 				49DC0D616B714E5FA716CD6A /* libPods.a in Frameworks */,
 				18B5262A19CECE570040698F /* libWZBeaconSDK.a in Frameworks */,
 			);
@@ -508,6 +518,8 @@
 				18C8C22319D49E84009C5186 /* SHSimpleSectionModel.m */,
 				18C8C23119D59FDB009C5186 /* SHMemberModel.h */,
 				18C8C23219D59FDB009C5186 /* SHMemberModel.m */,
+				1884712A19D601110074ECEB /* WZBeacon+SHModel.h */,
+				1884712B19D601110074ECEB /* WZBeacon+SHModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -602,6 +614,8 @@
 		18B5261E19CEC96E0040698F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1884712D19D637730074ECEB /* photo@2x.png */,
+				1884712E19D637730074ECEB /* section@2x.png */,
 				18C8C23419D5A94F009C5186 /* btn_update@2x.png */,
 				18C8C1C519D4712C009C5186 /* btn_favorite_selected@2x.png */,
 				18C8C1C619D4712C009C5186 /* btn_favorite_normal@2x.png */,
@@ -746,6 +760,7 @@
 		BBFF10E33B66408D96329C69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1834F32019D65141002733AA /* CoreLocation.framework */,
 				CB165FEEF4484A2C91A7654A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -847,6 +862,7 @@
 				1806B43C19D094B7000C8507 /* SHFavoriteViewController.xib in Resources */,
 				18C8C20619D4712C009C5186 /* inputbox_bg@2x.png in Resources */,
 				18C8C20119D4712C009C5186 /* photo@2x.png in Resources */,
+				1884713019D637730074ECEB /* section@2x.png in Resources */,
 				18C8C19E19D34A05009C5186 /* SHEtiquetteInfoListViewController.xib in Resources */,
 				18C8C20A19D4712C009C5186 /* facebook_sel@2x.png in Resources */,
 				18C8C21A19D4712C009C5186 /* bg_main_01@2x.png in Resources */,
@@ -856,6 +872,7 @@
 				18C8C21719D4712C009C5186 /* bg_main_04@2x.png in Resources */,
 				18C8C20519D4712C009C5186 /* btn_cancel@2x.png in Resources */,
 				18C8C1AE19D34A74009C5186 /* SHSettingsVersionViewController.xib in Resources */,
+				1884712F19D637730074ECEB /* photo@2x.png in Resources */,
 				18C8C1F919D4712C009C5186 /* developer05@2x.png in Resources */,
 				18C8C21C19D4712C009C5186 /* btn_main_nor@2x.png in Resources */,
 				18C8C20D19D4712C009C5186 /* slash@2x.png in Resources */,
@@ -971,6 +988,7 @@
 				18C8C17B19D336E4009C5186 /* SHBeaconUserViewCell.m in Sources */,
 				18B525F519CEC77B0040698F /* ViewController.m in Sources */,
 				18C8C17119D3289D009C5186 /* AppUtility.m in Sources */,
+				1884712C19D601110074ECEB /* WZBeacon+SHModel.m in Sources */,
 				18C8C23E19D5C29F009C5186 /* SHSearchFetcher.m in Sources */,
 				18C8C1A519D34A26009C5186 /* SHEtiquetteInfoDetailViewController.m in Sources */,
 				18C8C1B919D435C6009C5186 /* SHTopHandicapFetcher.m in Sources */,

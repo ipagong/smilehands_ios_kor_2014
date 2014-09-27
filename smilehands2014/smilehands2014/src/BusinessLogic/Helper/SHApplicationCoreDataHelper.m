@@ -29,7 +29,7 @@
 
 + (void)initCoreDataSetup
 {
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kSHCoreDataSQLiteName];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:kSHCoreDataSQLiteName];
 }
 
 + (void)cleanUpCoreData

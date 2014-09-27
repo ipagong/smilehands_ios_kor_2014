@@ -35,6 +35,8 @@
 
 - (void)setSection:(NSInteger)section sectionObject:(id)sectionObject sectionItems:(NSArray *)items
 {
+    [self.sectionData removeObjectForKey:@(section)];
+    
     NSMutableArray *sectionData = [self.sectionData objectForKey:@(section)];
     
     NSMutableArray *changedItems = [NSMutableArray arrayWithArray:items];

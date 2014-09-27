@@ -6,9 +6,15 @@
 //  Copyright (c) 2014년 smilehands. All rights reserved.
 //
 
-#import "SHCommonViewController.h"
+#import <UIKit/UIKit.h>
+#import "SHDataList.h"
+#import "SHFetcherFactory.h"
 
-@interface SHBeaconFinderViewController : SHCommonViewController
+@interface SHBeaconFinderViewController : UIViewController
+<UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, strong) SHDataList *dataList;
 
 @property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
+
 @end

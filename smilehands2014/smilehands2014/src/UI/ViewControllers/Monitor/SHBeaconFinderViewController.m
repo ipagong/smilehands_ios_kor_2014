@@ -14,31 +14,128 @@
 
 @implementation SHBeaconFinderViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self initCustomData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initCustomData
+{
+    self.dataList = [[SHDataList alloc] init];
+}
+
+- (void)initCustomUI
+{
+    [self.collectionView setFrame:CGRectMake(0, 0,
+                                             CGRectGetWidth(self.view.bounds),
+                                             CGRectGetHeight(self.view.bounds))];
+    [self.collectionView setBackgroundColor:RGBColor(230, 230, 230)];
+    [self.collectionView setAlwaysBounceVertical:YES];
+    [self.view addSubview:self.collectionView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [[SHBeaconManager sharedInstance] scanDevice];
+    
     [super viewWillAppear:animated];
     
-    self.title = LocalString(@"title_beacon");
+    [self initCustomUI];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changedBeaconsDevices:)
+                                                 name:SHBeaconManagerNotificationDidUpdate
+                                               object:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
-*/
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:SHBeaconManagerNotificationDidUpdate
+                                                  object:nil];
+}
+
+- (void)changedBeaconsDevices:(NSNotification *)noti
+{
+    DLog(@"-----> %@", [[SHBeaconManager sharedInstance] validDevices]);
+    
+    NSArray *validDevices = [[SHBeaconManager sharedInstance] validDevices];
+    [self.dataList setSection:0 sectionObject:kEmptySectionData sectionItems:validDevices];
+    
+    [self.collectionView reloadData];
+}
+
+#pragma mark - layout methods
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    DLog(@"---> you should override.");
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    DLog(@"---> you should override.");
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return self.dataList.sectionData.count;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.dataList itemsAtSection:section].count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id <SHCommonModelProtocol> model = [self.dataList itemAtIndexPath:indexPath];
+    
+    if (model == nil) return nil;
+    
+    [collectionView registerClass:model.cellClazz
+       forCellWithReuseIdentifier:model.cellKey];
+    
+    UICollectionViewCell <SHCommonCellProtocol> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:model.cellKey
+                                                                                                  forIndexPath:indexPath];
+    
+    [cell refreshWithModel:model];
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(CGRectGetWidth(self.view.bounds), 80);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
+                        layout:(UICollectionViewLayout*)collectionViewLayout
+        insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
 
 @end

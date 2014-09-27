@@ -9,11 +9,15 @@
 #import "SHApplicationEventHelper.h"
 #import "SHServiceManager.h"
 
+#define kDefaultValidBeaconUUID @"a0000000-0000-0000-0000-000000000000"
+
 @implementation SHApplicationEventHelper
 
 + (void)applicationDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self initDefaultHandicapListIfNotExist];
+    
+    [self initBeaconUUIDs];
     
     [self updateEtiqutteListIfNeeds];
 }
@@ -45,6 +49,11 @@
             
         }
     }
+}
+
++ (void)initBeaconUUIDs
+{
+    [[SHBeaconManager sharedInstance] updateValidUUIDs:@[kDefaultValidBeaconUUID]];
 }
 
 + (void)updateEtiqutteListIfNeeds

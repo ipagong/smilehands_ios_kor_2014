@@ -14,14 +14,9 @@
 @interface SHCommonViewController : UIViewController
 <UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, SHFetcherDelegate>
 
-
 @property (nonatomic, strong) SHDataList *dataList;
 @property (nonatomic, weak) UICollectionView *currentCollectionView;
 @property (nonatomic, strong) SHDefaultFetcher *fetcher;
-
-@property (nonatomic, strong) SHDataList *searchDataList;
-@property (nonatomic, weak) UICollectionView *searchCollectionView;
-@property (nonatomic, strong) SHDefaultFetcher *serarchFetcher;
 
 
 - (SHFetcherType)fetcherType;

@@ -31,5 +31,7 @@
 
 #import "SHPreferences.h"
 #import "SHBarButtonItem.h"
+#import "WZBeacon.h"
+#import "WZBeacon+SHModel.h"
 
 #endif
