@@ -95,7 +95,7 @@
     
     [[UINavigationBar appearance] setBackgroundColor:RGBColor(219, 25, 57)];
     [[UINavigationBar appearance] setBarTintColor:RGBColor(219, 25, 57)];
-    [[UINavigationBar appearance] setTranslucent:NO];
+//    [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                           [UIColor whiteColor],
                                                           NSForegroundColorAttributeName,
@@ -105,7 +105,7 @@
     [[UITabBar appearance] setBackgroundColor:RGBColor(255, 255, 255)];
     [[UITabBar appearance] setBarTintColor:RGBColor(255, 255, 255)];
     [[UITabBar appearance] setTintColor:[UIColor blackColor]];
-    [[UITabBar appearance] setTranslucent:NO];
+//    [[UITabBar appearance] setTranslucent:NO];
 }
 
 

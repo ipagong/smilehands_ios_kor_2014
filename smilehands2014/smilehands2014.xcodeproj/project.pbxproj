@@ -21,6 +21,7 @@
 		1806B45319D0962A000C8507 /* SHSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1806B45119D0962A000C8507 /* SHSettingsViewController.xib */; };
 		1806B45519D09900000C8507 /* SmileHandsLocal.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1806B45419D09900000C8507 /* SmileHandsLocal.strings */; };
 		1834F32119D65141002733AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834F32019D65141002733AA /* CoreLocation.framework */; };
+		1836074819D716B30036B9A1 /* SHBeaconUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836074719D716B30036B9A1 /* SHBeaconUserManager.m */; };
 		1884712C19D601110074ECEB /* WZBeacon+SHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1884712B19D601110074ECEB /* WZBeacon+SHModel.m */; };
 		1884712F19D637730074ECEB /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1884712D19D637730074ECEB /* photo@2x.png */; };
 		1884713019D637730074ECEB /* section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1884712E19D637730074ECEB /* section@2x.png */; };
@@ -156,6 +157,8 @@
 		1806B45619D0A00B000C8507 /* SHCommonModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCommonModelProtocol.h; sourceTree = "<group>"; };
 		1806B45719D0A01E000C8507 /* SHCommonCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCommonCellProtocol.h; sourceTree = "<group>"; };
 		1834F32019D65141002733AA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1836074619D716B30036B9A1 /* SHBeaconUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHBeaconUserManager.h; sourceTree = "<group>"; };
+		1836074719D716B30036B9A1 /* SHBeaconUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHBeaconUserManager.m; sourceTree = "<group>"; };
 		1884712A19D601110074ECEB /* WZBeacon+SHModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WZBeacon+SHModel.h"; sourceTree = "<group>"; };
 		1884712B19D601110074ECEB /* WZBeacon+SHModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WZBeacon+SHModel.m"; sourceTree = "<group>"; };
 		1884712D19D637730074ECEB /* photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo@2x.png"; sourceTree = "<group>"; };
@@ -504,6 +507,8 @@
 				18C8C16519D31D84009C5186 /* SHServiceManager.m */,
 				18C8C1B419D34DFD009C5186 /* SHLocalDataManager.h */,
 				18C8C1B519D34DFD009C5186 /* SHLocalDataManager.m */,
+				1836074619D716B30036B9A1 /* SHBeaconUserManager.h */,
+				1836074719D716B30036B9A1 /* SHBeaconUserManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -979,6 +984,7 @@
 				18C8C17E19D336F9009C5186 /* SHTeamMemberViewCell.m in Sources */,
 				18C8C23819D5AB2A009C5186 /* UserDefaultsHelper.m in Sources */,
 				18C8C16619D31D84009C5186 /* SHServiceManager.m in Sources */,
+				1836074819D716B30036B9A1 /* SHBeaconUserManager.m in Sources */,
 				1806B41819D08AD8000C8507 /* SHApplicationCoreDataHelper.m in Sources */,
 				18C8C16919D31DA2009C5186 /* SHApplicationEventHelper.m in Sources */,
 				1806B44819D0959C000C8507 /* SHEtiquetteRootViewController.m in Sources */,
@@ -1128,7 +1134,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C386D2FB5E04355898CA0CE /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "SmileHands2014/SmileHands2014-Prefix.pch";
 				INFOPLIST_FILE = SmileHands2014/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -1145,7 +1152,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C386D2FB5E04355898CA0CE /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "SmileHands2014/SmileHands2014-Prefix.pch";
 				INFOPLIST_FILE = SmileHands2014/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

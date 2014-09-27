@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const SHBeaconManagerNotificationCentralManagerDidUpdateState;
 extern NSString * const SHBeaconManagerNotificationDidUpdate;
+extern NSString * const SHBeaconManagerNotificationDidFind;
+extern NSString * const SHBeaconManagerNotificationDidLostNotify;
 
 @interface SHBeaconManager : NSObject
 
@@ -17,6 +18,8 @@ extern NSString * const SHBeaconManagerNotificationDidUpdate;
 
 - (void)updateValidUUIDs:(NSArray *)uuids;
 - (void)cleanUp;
+
+- (void)scanDevice;
 
 @property (nonatomic, strong, readonly) NSArray *validDevices;
 @property (nonatomic, assign, readonly) BOOL isRunning;

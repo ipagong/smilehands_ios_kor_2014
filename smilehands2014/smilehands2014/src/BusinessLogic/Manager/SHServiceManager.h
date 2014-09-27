@@ -18,8 +18,7 @@
                          completion:(void (^)(id result))completion
                             failure:(void (^)(id error, BOOL isCancelled))failure;
 
-+ (void)findLostInfoWithMacAddr:(NSArray *)macAddrList
-                       lostCode:(NSString *)lostCode
++ (void)findLostInfoWithMacAddr:(NSString *)macAddr
                      completion:(void (^)(id result))completion
                         failure:(void (^)(id error, BOOL isCancelled))failure;
 

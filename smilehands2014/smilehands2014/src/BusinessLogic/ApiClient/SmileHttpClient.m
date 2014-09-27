@@ -29,60 +29,86 @@
     return apiClient;
 }
 
+
+
 #pragma mark -
 #pragma mark Result Parse
 
-- (NSURLSessionDataTask *)postPath:(NSString *)path
-                        parameters:(NSDictionary *)parameters
-                        completion:(void (^)(id result))completion
-                           failure:(void (^)(id error, BOOL isCancelled))failure
+- (AFHTTPRequestOperation *)postPath:(NSString *)path
+                          parameters:(NSDictionary *)parameters
+                          completion:(void (^)(id result))completion
+                             failure:(void (^)(id error, BOOL isCancelled))failure
 {
-    return [self POST:path parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-
-        if (responseObject == nil) {
-             if (failure) failure(nil, NO);
+    NSString *urlString = [[self.baseURL absoluteString] stringByAppendingString:path];
+    
+    NSDictionary *convertedParameters = [self convertParameterKeyPairArrayToSet:parameters];
+    
+    NSMutableURLRequest * request = [self.requestSerializer requestWithMethod:@"POST"
+                                                                    URLString:urlString
+                                                                   parameters:convertedParameters
+                                                                        error:nil];
+    
+    NSLog(@"request = %@", request);
+    
+    AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation * operation, id responseObject) {
+        
+        NSError * error = nil;
+        id result = [self resultForOperation:operation error:&error];
+        
+        if (error) {
+            result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            error = nil;
         }
         
-        if (completion) completion(responseObject);
         
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (error) {
+            if (failure) failure(error, NO);
+        }
         
-        [self removeCookieData];
-        
-        if (failure) failure(error, task.state == NSURLSessionTaskStateCanceling);
-        
-    }];
-}
-
-
-- (NSURLSessionDataTask *)getPath:(NSString *)path
-                       parameters:(NSDictionary *)parameters
-                       completion:(void (^)(id result))completion
-                          failure:(void (^)(id error, BOOL isCancelled))failure
-{
-    return [self GET:path parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        if (responseObject == nil) {
+        if (result == nil) {
             if (failure) failure(nil, NO);
         }
         
-        if (completion) completion(responseObject);
+        if (completion) completion(result);
         
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    } failure:^(AFHTTPRequestOperation * operation, NSError * error) {
         
-        [self removeCookieData];
-        
-        if (failure) failure(error, task.state == NSURLSessionTaskStateCanceling);
+        if (failure) failure(error, operation.cancelled);
         
     }];
+    
+    return operation;
 }
 
-- (void)removeCookieData
+- (NSDictionary *)convertParameterKeyPairArrayToSet:(NSDictionary *)parameters
 {
-    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (NSHTTPCookie *cookie in [storage cookies]) {
-        [storage deleteCookie:cookie];
+    NSMutableDictionary *convertedParameters = [NSMutableDictionary dictionary];
+    
+    for (id key in parameters.allKeys) {
+        
+        id value = parameters[key];
+        
+        if ([value isKindOfClass:[NSArray class]] == YES) {
+            
+            NSArray *arrayValue = value;
+            
+            NSSet *convertedSet = [NSSet setWithArray:arrayValue];
+            
+            [convertedParameters setObject:convertedSet forKey:key];
+            
+        } else {
+            [convertedParameters setObject:value forKey:key];
+        }
     }
+    
+    return convertedParameters;
 }
+
+- (id)resultForOperation:(AFHTTPRequestOperation *)operation error:(NSError **)error {
+
+    return [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:error];
+}
+
 
 @end

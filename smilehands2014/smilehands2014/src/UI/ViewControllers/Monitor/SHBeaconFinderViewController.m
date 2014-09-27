@@ -7,6 +7,9 @@
 //
 
 #import "SHBeaconFinderViewController.h"
+#import "WZBeacon.h"
+#import "WZBeacon+SHModel.h"
+#import "SHEtiquetteInfoListViewController.h"
 
 @interface SHBeaconFinderViewController ()
 
@@ -37,9 +40,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{
-    [[SHBeaconManager sharedInstance] scanDevice];
-    
+{    
     [super viewWillAppear:animated];
     
     [self initCustomUI];
@@ -66,7 +67,7 @@
 
 - (void)changedBeaconsDevices:(NSNotification *)noti
 {
-    DLog(@"-----> %@", [[SHBeaconManager sharedInstance] validDevices]);
+//    DLog(@"-----> %@", [[SHBeaconManager sharedInstance] validDevices]);
     
     NSArray *validDevices = [[SHBeaconManager sharedInstance] validDevices];
     [self.dataList setSection:0 sectionObject:kEmptySectionData sectionItems:validDevices];
@@ -78,7 +79,24 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DLog(@"---> you should override.");
+    WZBeacon *beacon = [self.dataList itemAtIndexPath:indexPath];
+    
+    SHEtiquetteInfoListViewController *etiquetteInfoVc = [[SHEtiquetteInfoListViewController alloc] initWithNibName:@"SHEtiquetteInfoListViewController" bundle:nil];
+    
+    NSDictionary *handicapInfo = SHLocalDataManager.defaultHandicapInfoList[beacon.major.stringValue];
+    
+    if (handicapInfo == nil) {
+        return;
+    }
+    
+    NSString *title = handicapInfo[kDefaultHandicapTitle];
+    
+    etiquetteInfoVc.majorId = beacon.major.stringValue;
+    
+    etiquetteInfoVc.title = [NSString stringWithFormat:LocalString(@"title_etiquette_specific"), title];
+    
+    [self.navigationController pushViewController:etiquetteInfoVc animated:YES];
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath

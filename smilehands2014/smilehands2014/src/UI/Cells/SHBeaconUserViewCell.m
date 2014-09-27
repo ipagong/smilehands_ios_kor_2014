@@ -100,7 +100,7 @@
     
     [self.idLabel sizeToFit];
     [self.idLabel setFrame:CGRectMake(CGRectGetMinX(self.dotImageView.frame) + 6,
-                                      CGRectGetHeight(self.bgImageView.bounds)/2 - 9,
+                                      CGRectGetHeight(self.bgImageView.bounds)/2 - 7,
                                       CGRectGetWidth(self.idLabel.bounds),
                                       15)];
 }

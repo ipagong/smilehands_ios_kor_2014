@@ -29,7 +29,7 @@
     NSDictionary *parameter = @{@"lastDate": lastDateString,
                                 @"status" : KServiceParameterPublish};
     
-    [[SmileHTTPClient apiClient] postPath:@"/etiquette/list.do"
+    [[[SmileHTTPClient apiClient] postPath:@"/etiquette/list.do"
                                parameters:parameter
                                completion:^(id result) {
                                    
@@ -51,7 +51,7 @@
                                    if (completion)
                                        completion(resultList);
                                    
-                               } failure:failure];
+                               } failure:failure] start];
 }
 
 
@@ -61,27 +61,60 @@
 {
     NSDictionary *parameter = @{@"majorId":@""};
     
-    [[SmileHTTPClient apiClient] postPath:@"/beacon/insert.do"
+    [[[SmileHTTPClient apiClient] postPath:@"/beacon/insert.do"
                                parameters:parameter
                                completion:^(id result) {
                                    
-                               } failure:failure];
+                               } failure:failure] start];
 }
 
-+ (void)findLostInfoWithMacAddr:(NSArray *)macAddrList
-                       lostCode:(NSString *)lostCode
++ (void)findLostInfoWithMacAddr:(NSString *)macAddrList
                      completion:(void (^)(id result))completion
                         failure:(void (^)(id error, BOOL isCancelled))failure
 {
-    NSDictionary *parameter = @{@"majorId":@""};
+    if ([AppUtility isEmptyOrWhitespace:macAddrList] == YES) {
+        if(failure)failure(nil, NO);
+        return;
+    }
     
-    [[SmileHTTPClient apiClient] postPath:@"/beacon/find.do"
+    NSSet *list = [NSSet setWithArray:@[macAddrList]];
+    
+    NSDictionary *parameter = @{@"macAddrList": list,
+                                @"lostFound"  : @"404"};
+    
+    
+    [[[SmileHTTPClient apiClient] postPath:@"/beacon/find.do"
                                parameters:parameter
                                completion:^(id result) {
                                    
+                                   if ([result isKindOfClass:[NSDictionary class]] == NO) {
+                                       if (failure) failure(nil, NO);
+                                       return;
+                                   }
+                                   
+                                   NSArray *list = result[@"list"];
+                                   
+                                   if ([[NSNull null] isEqual:list] == YES || list == nil) {
+                                       if (failure) failure(nil, NO);
+                                       return;
+                                   }
+                                   
+                                   NSMutableArray *lostMacList = [NSMutableArray array];
+                                   
+                                   for (NSDictionary *info in list) {
+                                       if ([info[@"lostFound"] isEqualToString:@"404"]) {
+                                           [lostMacList addObject:info[@"macAddr"]];
+                                       }
+                                   }
+                                   
+                                   DLog(@"lostMacList : %@", lostMacList);
+                                   
+                                   if (completion)
+                                       completion(lostMacList);
+                                   
                                } failure:^(id error, BOOL isCancelled) {
                                    
-                               }];
+                               }] start];
 }
 
 + (void)notifyLostInfoWithMacAddr:(NSString *)macAddr
@@ -91,15 +124,29 @@
                        completion:(void (^)(id result))completion
                           failure:(void (^)(id error, BOOL isCancelled))failure
 {
-    NSDictionary *parameter = @{@"majorId":@""};
     
-    [[SmileHTTPClient apiClient] postPath:@"/lost/insert.do"
+    if ([AppUtility isEmptyOrWhitespace:macAddr] == YES) {
+        if (failure) failure(nil, NO);
+        return;
+    }
+    
+    NSString *dateString = [AppUtility dateStringWithDate:date];
+    
+    NSDictionary *parameter = @{@"macAddr":macAddr,
+                                @"date"  : dateString,
+                                @"lat"   : latitude,
+                                @"lon"   : longitude
+                                };
+    
+    [[[SmileHTTPClient apiClient] postPath:@"/lost/insert.do"
                                parameters:parameter
                                completion:^(id result) {
                                    
+                                   DLog(@"----> lost insert : %@", result);
+                                   
                                } failure:^(id error, BOOL isCancelled) {
                                    
-                               }];
+                               }] start];
 }
 
 @end

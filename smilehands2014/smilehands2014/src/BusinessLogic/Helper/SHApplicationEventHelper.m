@@ -8,6 +8,7 @@
 
 #import "SHApplicationEventHelper.h"
 #import "SHServiceManager.h"
+#import "SHBeaconUserManager.h"
 
 #define kDefaultValidBeaconUUID @"a0000000-0000-0000-0000-000000000000"
 
@@ -20,16 +21,19 @@
     [self initBeaconUUIDs];
     
     [self updateEtiqutteListIfNeeds];
+    
+    [[SHBeaconUserManager sharedInstance] startUpdateLocation];
 }
 
 + (void)applicationDidBecomeActive
 {
-    
+
 }
 
 + (void)applicationWillTerminate
 {
-    
+    [[SHBeaconUserManager sharedInstance] finishTracking];
+    [[SHBeaconUserManager sharedInstance] unregistNotification];
 }
 
 + (void)initDefaultHandicapListIfNotExist

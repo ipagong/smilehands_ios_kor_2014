@@ -20,6 +20,6 @@
 @property (nonatomic, strong) NSString *majorId;
 @property (nonatomic, strong) NSString *lastUpdate;
 @property (nonatomic, strong) NSString *eId;
-
+@property (nonatomic, strong) NSString *adminId;
 
 @end

@@ -13,14 +13,10 @@
 
 + (instancetype)apiClient;
 
-- (NSURLSessionDataTask *)postPath:(NSString *)path
+- (AFHTTPRequestOperation *)postPath:(NSString *)path
                         parameters:(NSDictionary *)parameters
                         completion:(void (^)(id result))completion
                            failure:(void (^)(id error, BOOL isCancelled))failure;
 
-- (NSURLSessionDataTask *)getPath:(NSString *)path
-                       parameters:(NSDictionary *)parameters
-                       completion:(void (^)(id result))completion
-                          failure:(void (^)(id error, BOOL isCancelled))failure;
 
 @end
