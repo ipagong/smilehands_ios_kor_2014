@@ -107,8 +107,8 @@
     [self.situationLabel setBackgroundColor:[UIColor clearColor]];
     [self.topView addSubview:self.situationLabel];
     
-    UIImage *fvNormalImage = [UIImage imageNamed:@"btn_favorite_normal"];
-    UIImage *fvPressedImage = [UIImage imageNamed:@"btn_favorite_selected"];
+    UIImage *fvNormalImage = [UIImage imageNamed:@"favorite_unsel"];
+    UIImage *fvPressedImage = [UIImage imageNamed:@"favorite_sel"];
     self.favoriteButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.favoriteButton setImage:fvNormalImage forState:UIControlStateNormal];
     [self.favoriteButton setImage:fvPressedImage forState:UIControlStateHighlighted];

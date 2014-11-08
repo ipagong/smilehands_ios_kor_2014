@@ -10,6 +10,8 @@
 
 @interface SHBarButtonItem : UIBarButtonItem
 
+@property (nonatomic, strong) UIView *animationView;
+
 + (id)addBarButtonTitle:(NSString *)title
                  target:(id)target
                  action:(SEL)selector;

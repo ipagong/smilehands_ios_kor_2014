@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHSettingsVersionViewController : UIViewController
+@interface SHSettingsVersionViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @end

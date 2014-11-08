@@ -22,6 +22,7 @@
     
     [self updateEtiqutteListIfNeeds];
     
+    [[SHBeaconUserManager sharedInstance] checkAuthorizationIfOverIOS8];
     [[SHBeaconUserManager sharedInstance] startUpdateLocation];
 }
 

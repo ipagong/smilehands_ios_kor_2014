@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface SHBeaconUserManager : NSObject
 
@@ -14,6 +15,7 @@
 @property (nonatomic, assign) float latitude;
 
 @property (nonatomic, strong) NSMutableOrderedSet *lostMacAddressList;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 + (instancetype)sharedInstance;
 
@@ -22,5 +24,7 @@
 
 - (void)unregistNotification;
 - (void)registNotification;
+
+- (void)checkAuthorizationIfOverIOS8;
 
 @end

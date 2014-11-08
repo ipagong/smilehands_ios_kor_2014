@@ -26,6 +26,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    if ([AppUtility isIOS8x] == YES) {
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
+        
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+        
+        
+    }
+    
+    
     [SHApplicationCoreDataHelper initCoreDataSetup];
     
     [SHApplicationEventHelper applicationDidFinishLaunchingWithOptions:launchOptions];
@@ -43,7 +54,6 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -95,17 +105,22 @@
     
     [[UINavigationBar appearance] setBackgroundColor:RGBColor(219, 25, 57)];
     [[UINavigationBar appearance] setBarTintColor:RGBColor(219, 25, 57)];
-//    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    if ([AppUtility isIOS8x] == YES) {
+        [[UINavigationBar appearance] setTranslucent:NO];
+    }
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                           [UIColor whiteColor],
                                                           NSForegroundColorAttributeName,
                                                           nil]];
 
-
     [[UITabBar appearance] setBackgroundColor:RGBColor(255, 255, 255)];
     [[UITabBar appearance] setBarTintColor:RGBColor(255, 255, 255)];
-    [[UITabBar appearance] setTintColor:[UIColor blackColor]];
-//    [[UITabBar appearance] setTranslucent:NO];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRGB:0xdb1939]];
+    
+    if ([AppUtility isIOS8x] == YES) {
+        [[UITabBar appearance] setTranslucent:NO];
+    }
 }
 
 

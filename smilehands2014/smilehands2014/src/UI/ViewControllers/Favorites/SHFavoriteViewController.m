@@ -158,4 +158,35 @@
 }
 
 
+- (void)smileHandsFetcher:(id<SHFetcherProtocol>)fetcher finishedResultType:(SHFetcherResultType)resultType error:(NSError *)error
+{
+    [SHEmptyViewFactory removeFromEmptyViewWithSuperView:self.currentCollectionView];
+    
+    switch (resultType) {
+        case SHFetcherResultTypeSuccess:
+        {
+            [self.currentCollectionView reloadData];
+        }
+            break;
+            
+        case SHFetcherResultTypeReloadSuccess:
+        {
+            [self.currentCollectionView performBatchUpdates:^{
+                [self.currentCollectionView reloadData];
+            } completion:^(BOOL finished) {}];
+        }
+            break;
+        case SHFetcherResultTypeNoData:
+        {
+            [self.currentCollectionView reloadData];
+            [SHEmptyViewFactory addEmptyViewWithType:SHEmptyViewTypeFavorite
+                                           superView:self.currentCollectionView];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+
 @end

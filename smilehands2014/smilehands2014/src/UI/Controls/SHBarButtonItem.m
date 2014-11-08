@@ -30,8 +30,9 @@
     
     [button sizeToFit];
     
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
+    SHBarButtonItem *barButtonItem = [[SHBarButtonItem alloc] initWithCustomView:button];
+    barButtonItem.animationView = button;
     return barButtonItem;
 }
 
@@ -47,9 +48,10 @@
     [button.titleLabel setFont:[UIFont systemFontOfSize:18]];
     [button setTitleColor:RGBColor(255, 255, 255) forState:UIControlStateNormal];
     [button sizeToFit];
+
     
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
+    SHBarButtonItem *barButtonItem = [[SHBarButtonItem alloc] initWithCustomView:button];
+    barButtonItem.animationView = button;
     return barButtonItem;
 }
 

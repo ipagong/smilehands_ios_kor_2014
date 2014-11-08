@@ -6,6 +6,12 @@
 // project.
 
 
+// ACPReminder
+#define COCOAPODS_POD_AVAILABLE_ACPReminder
+#define COCOAPODS_VERSION_MAJOR_ACPReminder 1
+#define COCOAPODS_VERSION_MINOR_ACPReminder 0
+#define COCOAPODS_VERSION_PATCH_ACPReminder 1
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 2

@@ -7,11 +7,11 @@
 //
 
 #import "SHBeaconUserManager.h"
-#import <CoreLocation/CoreLocation.h>
+
 
 @interface SHBeaconUserManager () <CLLocationManagerDelegate>
 
-@property (nonatomic, strong) CLLocationManager *locationManager;
+
 @property (nonatomic, assign) BOOL isMonitoring;
 
 @end
@@ -76,6 +76,11 @@
         return;
     }
     
+    if ([AppUtility nowRunInBackground] == YES &&
+        [SHPreferences isOnAutoAlarm] == YES) {
+        [AppUtility registLocalNotification];
+    }
+    
     WZBeacon *beacon = noti.object;
     
     [SHServiceManager findLostInfoWithMacAddr:beacon.BDAddress
@@ -121,7 +126,7 @@
         if (self.latitude == NSNotFound || self.longitude == NSNotFound) return;
         
         for (WZBeacon *beacon in [SHBeaconManager sharedInstance].validDevices) {
-            
+
             if ([self.lostMacAddressList containsObject:beacon.BDAddress] == YES) {
                 [SHServiceManager notifyLostInfoWithMacAddr:beacon.BDAddress
                                                        date:[NSDate date]
@@ -183,6 +188,12 @@
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
     NSLog(@"Started monitoring %@ region", region.identifier);
+}
+
+- (void)checkAuthorizationIfOverIOS8
+{
+    if ([AppUtility isIOS8x] == YES)
+        [self.locationManager requestAlwaysAuthorization];
 }
 
 @end

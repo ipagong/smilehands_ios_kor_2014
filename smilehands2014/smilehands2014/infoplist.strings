@@ -1,0 +1,9 @@
+/* 
+  infoPlist.strings
+  SmileHands2014
+
+  Created by suwan on 2014. 9. 28..
+  Copyright (c) 2014년 smilehands. All rights reserved.
+*/
+"CFBundleDisplayName" = "SmileHands";
+"CFBundleName" = "SmileHands";

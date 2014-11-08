@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UIImageView *logoImageView;
 
+@property (nonatomic, strong) UILabel *teamLabel;
+
 @property (nonatomic, strong) UILabel *versionLabel;
 
 @property (nonatomic, strong) UIButton *updateButton;
@@ -35,6 +37,52 @@
     [super viewWillAppear:animated];
     
     [self initCustomUI];
+    
+    [self setupNavigationBar];
+    
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if(self.navigationController.viewControllers.count > 1) {
+        return YES;
+    }
+    return NO;
+}
+
+
+
+- (void)setupNavigationBar
+{
+    [self setupNavigationBarLeft];
+}
+
+- (void)setupNavigationBarLeft
+{
+    if (self.navigationController && self.navigationController.viewControllers.count > 1) {
+        
+        SHBarButtonItem *previous = [SHBarButtonItem addBarButtonTitle:nil
+                                                          defaultImage:[UIImage imageNamed:@"btn_back"]
+                                                        highlightImage:nil target:self action:@selector(onClickBackButton:)];
+        self.navigationItem.leftBarButtonItem = previous;
+    }
+}
+
+- (void)onClickBackButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSString *)title
@@ -52,8 +100,20 @@
     [self.logoImageView setImage:logoImage];
     [self.view addSubview:self.logoImageView];
     
+    self.teamLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,
+                                                               CGRectGetMaxY(self.logoImageView.frame) + 35,
+                                                               CGRectGetWidth(self.view.frame) - 20,
+                                                               21)];
+    [self.teamLabel setText:[NSString stringWithFormat:LocalString(@"settings_version_project_name")]];
+    self.teamLabel.font = [UIFont boldSystemFontOfSize:18.f];
+    [self.teamLabel setLineBreakMode:NSLineBreakByCharWrapping];
+    [self.teamLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.teamLabel setTextColor:[UIColor colorWithRGB:0x222222]];
+    [self.teamLabel setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:self.teamLabel];
+    
     self.versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,
-                                                                  CGRectGetMaxY(self.logoImageView.frame) + 15,
+                                                                  CGRectGetMaxY(self.teamLabel.frame) + 12,
                                                                   CGRectGetWidth(self.view.frame) - 20,
                                                                   18)];
     [self.versionLabel setText:[NSString stringWithFormat:LocalString(@"settings_version_info"),
@@ -97,8 +157,13 @@
                                             self.logoImageView.image.size.width,
                                             self.logoImageView.image.size.height)];
     
+    [self.teamLabel setFrame:CGRectMake(10,
+                                        CGRectGetMaxY(self.logoImageView.frame) + 35,
+                                        CGRectGetWidth(self.view.frame) - 20,
+                                        21)];
+    
     [self.versionLabel setFrame:CGRectMake(10,
-                                           CGRectGetMaxY(self.logoImageView.frame) + 15,
+                                           CGRectGetMaxY(self.teamLabel.frame) + 12,
                                            CGRectGetWidth(self.view.frame) - 20,
                                            18)];
     

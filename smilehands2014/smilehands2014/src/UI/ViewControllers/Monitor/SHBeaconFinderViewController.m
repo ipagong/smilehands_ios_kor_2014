@@ -12,7 +12,7 @@
 #import "SHEtiquetteInfoListViewController.h"
 
 @interface SHBeaconFinderViewController ()
-
+@property (nonatomic, strong) SHBarButtonItem *refrsh;
 @end
 
 @implementation SHBeaconFinderViewController
@@ -39,6 +39,11 @@
     [self.view addSubview:self.collectionView];
 }
 
+- (NSString *)title
+{
+    return LocalString(@"title_beacon");
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {    
     [super viewWillAppear:animated];
@@ -49,6 +54,8 @@
                                              selector:@selector(changedBeaconsDevices:)
                                                  name:SHBeaconManagerNotificationDidUpdate
                                                object:nil];
+    
+    [self setupRightNavigationBar];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -63,6 +70,24 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:SHBeaconManagerNotificationDidUpdate
                                                   object:nil];
+}
+
+- (void)setupRightNavigationBar
+{
+    self.refrsh = [SHBarButtonItem addBarButtonTitle:nil
+                                                    defaultImage:[UIImage imageNamed:@"btn_refresh"]
+                                                  highlightImage:nil target:self action:@selector(onClickRefresh:)];
+    self.navigationItem.rightBarButtonItem = self.refrsh;
+}
+
+- (void)onClickRefresh:(id)sender
+{
+    [AppUtility runSpinAnimationOnView:self.refrsh.animationView
+                              duration:4
+                             rotations:2
+                                repeat:0];
+    
+    [[SHBeaconManager sharedInstance] scanDevice];
 }
 
 - (void)changedBeaconsDevices:(NSNotification *)noti
@@ -106,7 +131,16 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return self.dataList.sectionData.count;
+    NSInteger count = self.dataList.sectionData.count;
+
+    [SHEmptyViewFactory removeFromEmptyViewWithSuperView:self.collectionView];
+    
+    if (count == 0) {
+        [SHEmptyViewFactory addEmptyViewWithType:SHEmptyViewTypeFinder
+                                       superView:self.collectionView];
+    }
+    
+    return count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -154,6 +188,5 @@
 {
     return 0;
 }
-
 
 @end

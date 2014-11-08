@@ -50,6 +50,7 @@
     NSArray *handicapList = [[SHLocalDataManager sharedInstance] allHandlicappedList];
     
     NSInteger index = 0;
+    NSInteger totalItemCount = 0;
     
     for (KindHandicap *handicap in handicapList) {
         KindHandicap *handicapInContext = [handicap MR_inThreadContext];
@@ -65,10 +66,11 @@
                         sectionObject:model
                          sectionItems:etiquetteList];
             index ++;
+            totalItemCount += etiquetteList.count;
         }
     }
     
-    if (handicapList && handicapList.count > 0) {
+    if (totalItemCount > 0) {
         [self sendFetcherResultType:SHFetcherResultTypeSuccess error:nil];
     } else {
         [self sendFetcherResultType:SHFetcherResultTypeNoData error:nil];

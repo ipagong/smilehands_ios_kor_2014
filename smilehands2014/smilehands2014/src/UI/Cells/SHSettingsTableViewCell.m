@@ -113,6 +113,12 @@
     DLog(@"---> %d",slideView.isOn);
     
     [SHPreferences setOnAutoAlarm:slideView.isOn];
+    
+    if (slideView.isOn == NO) {
+        [[SHBeaconUserManager sharedInstance].locationManager disallowDeferredLocationUpdates];
+    } else {
+        [[SHBeaconUserManager sharedInstance] checkAuthorizationIfOverIOS8];
+    }
 }
 
 - (void)setSelected:(BOOL)selected

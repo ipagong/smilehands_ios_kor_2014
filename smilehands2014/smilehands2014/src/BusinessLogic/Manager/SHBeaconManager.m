@@ -171,6 +171,9 @@ NSString * const SHBeaconManagerNotificationDidLostNotify = @"SHBeaconManagerNot
 
 - (void)scanDevice
 {
+    [self.currentBeacons removeAllObjects];
+    [self.previousBeacons removeAllObjects];
+    
     [self.beaconManager cleanScannedDevices];
     [self.beaconManager startBLEScan];
 

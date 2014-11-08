@@ -33,7 +33,7 @@ label_search_info     = "장애 유형별, 상황별 에티켓을 검색해보�
 label_cancel          = "취소";
 
 
-settings_version_project_name = "SMILE HANDS";
+settings_version_project_name = "Smile Hands";
 settings_version_info         = "Current Version %@";
 settings_version_newest       = "최신버전입니다";
 settings_version_update       = "업데이트하기";

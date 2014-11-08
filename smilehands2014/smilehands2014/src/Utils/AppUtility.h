@@ -34,4 +34,18 @@
 + (NSString *)dateStringWithDate:(NSDate *)date;
 + (NSDate *)dateWithString:(NSString *)stringDate;
 
++ (BOOL)isIOS4x;
++ (BOOL)isIOS5x;
++ (BOOL)isIOS6x;
++ (BOOL)isIOS7x;
++ (BOOL)isIOS8x;
+
++ (void) runSpinAnimationOnView:(UIView*)view
+                       duration:(CGFloat)duration
+                      rotations:(CGFloat)rotations
+                         repeat:(float)repeat;
++ (void)registLocalNotification;
++ (BOOL)nowRunInBackground;
+
+
 @end

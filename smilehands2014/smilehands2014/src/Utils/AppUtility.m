@@ -208,4 +208,62 @@
     return date;    
 }
 
+
+
++ (BOOL)isIOS4x {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    return 4.0 <= version && version < 5.0;
+}
+
++ (BOOL)isIOS5x {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    return 5.0 <= version && version < 6.0;
+}
+
+
++ (BOOL)isIOS6x {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    return 6.0 <= version && version < 7.0;
+}
+
++ (BOOL)isIOS7x {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    return 7.0 <= version && version < 8.0;
+}
+
++ (BOOL)isIOS8x {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    return 8.0 <= version && version < 9.0;
+}
+
++ (void) runSpinAnimationOnView:(UIView*)view
+                       duration:(CGFloat)duration
+                      rotations:(CGFloat)rotations
+                         repeat:(float)repeat
+{
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * rotations * duration ];
+    rotationAnimation.duration = duration;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = repeat;
+    
+    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
++ (void)registLocalNotification
+{
+
+    [[MKLocalNotificationsScheduler sharedInstance] scheduleNotificationOn:[NSDate dateWithTimeIntervalSinceNow:0.5] text:@"도움을 필요한 분이 주변에 있습니다."
+                                                                    action:@"View"
+                                                                     sound:nil
+                                                               launchImage:nil
+                                                                   andInfo:nil];
+}
+
++ (BOOL)nowRunInBackground
+{
+    return [[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground;
+}
+
 @end
